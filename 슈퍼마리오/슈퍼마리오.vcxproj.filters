@@ -118,6 +118,7 @@
     <Text Include="ReadMe.txt">
       <Filter>Default</Filter>
     </Text>
+    <Text Include="회의록.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="슈퍼마리오.rc">
