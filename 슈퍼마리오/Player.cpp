@@ -19,6 +19,7 @@ void CPlayer::Initialize()
 	m_tInfo.fY = 100.f;
 	// 수정함
 	// 그래
+	// 으하하
 }
 
 int CPlayer::Update()
