@@ -23,6 +23,7 @@ void CPlayer::Initialize()
 
 int CPlayer::Update()
 {
+	// 나도 수정할거야
 	if (!m_bIsGrounded)
 	{
 		m_Vel_Y += 1.f;
