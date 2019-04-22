@@ -39,6 +39,7 @@ int CPlayer::Update()
 
 void CPlayer::LateUpdate()
 {
+	// ;;;
 }
 
 void CPlayer::Render(HDC hDC)
