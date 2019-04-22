@@ -41,3 +41,11 @@ Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 
 // 
 총알도 만들어야 함
+
+// 깃헙 쓰는 법
+- 도구: 확장 및 업데이트 > 온라인: Github 검색 > 설치 > 재시작
+- SourceTree 설치
+- 클론 -> 작업... -> Pull -> Push
+
+- Pull 안됨? 작업 후 커밋 하지 않은 게 있어서임
+- 우선 커밋 하고, Pull 한다.
