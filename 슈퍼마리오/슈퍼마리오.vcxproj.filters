@@ -82,6 +82,9 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>98. Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>01. Obj\04. Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>98. Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>01. Obj\04. Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

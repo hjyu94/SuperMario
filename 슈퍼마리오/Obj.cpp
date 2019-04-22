@@ -4,7 +4,9 @@
 
 CObj::CObj()
 	:m_bIsDead(false)
+	, m_bIsGrounded(false)
 	, m_fAngle(0.f)
+	, m_Vel_Y(0)
 {
 	ZeroMemory(&m_tInfo, sizeof(INFO));
 	ZeroMemory(&m_tRect, sizeof(RECT));
@@ -21,6 +23,19 @@ void CObj::UpdateRect()
 	m_tRect.top = LONG(m_tInfo.fY - (int(m_tInfo.fCY) >> 1));
 	m_tRect.right = LONG(m_tInfo.fX + (m_tInfo.fCX * 0.5f));
 	m_tRect.bottom = LONG(m_tInfo.fY + (int(m_tInfo.fCY) >> 1));
+}
+
+void CObj::UpdateHeight()
+{
+	if (!m_bIsGrounded)
+	{
+		m_Vel_Y += 1.f;
+		m_tInfo.fY += m_Vel_Y;
+	}
+	else
+	{
+		m_Vel_Y = 0.f;
+	}
 }
 
 void CObj::Set_Pos(float fx, float fy)

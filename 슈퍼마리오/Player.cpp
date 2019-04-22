@@ -21,6 +21,17 @@ void CPlayer::Initialize()
 
 int CPlayer::Update()
 {
+	if (!m_bIsGrounded)
+	{
+		m_Vel_Y += 1.f;
+		m_tInfo.fY += m_Vel_Y;
+	}
+	else
+	{
+		m_Vel_Y = 0.f;
+	}
+
+	CObj::UpdateRect();
 	return 0;
 }
 
@@ -30,6 +41,7 @@ void CPlayer::LateUpdate()
 
 void CPlayer::Render(HDC hDC)
 {
+	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CPlayer::Release()

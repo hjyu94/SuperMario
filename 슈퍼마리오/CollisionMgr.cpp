@@ -21,7 +21,7 @@ void CCollisionMgr::CollisionRect(OBJLIST & DestList, OBJLIST & SourList)
 		{
 			if (IntersectRect(&rc,&pDst->Get_Rect(), &pSrc->Get_Rect()))
 			{
-				// 충돌 시
+				// 충돌 
 			}
 		}
 	}

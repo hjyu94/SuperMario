@@ -2,7 +2,9 @@
 
 namespace OBJID
 {
-	enum ID {PLAYER, MONSTER, BULLET, MOUSE, END};
+	enum ID {
+		MAP, PLAYER, MONSTER, BULLET, END
+	};
 }
 
 namespace PLAYER

@@ -14,6 +14,7 @@ public:
 
 public:
 	void UpdateRect(); 
+	void UpdateHeight();
 
 public:
 	const INFO& Get_Info()const { return m_tInfo; }
@@ -24,10 +25,14 @@ public:
 	void Set_Angle(float _angle);
 	void Set_Dead();
 
+	
 protected:
 	INFO m_tInfo; 
 	RECT m_tRect; 
 	
+	float m_Vel_Y;
+	bool m_bIsGrounded;
+
 	float m_fSpeed; 
 	float m_fAngle; 
 	bool m_bIsDead;

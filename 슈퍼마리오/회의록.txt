@@ -34,3 +34,10 @@ Tile				바닥
 UI: 점수, 동전, 스테이지, 타임(지나면 타임오버)
  
 창 크기, 800 600
+
+
+// 자주 쓰는 함수
+Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+
+// 
+총알도 만들어야 함
