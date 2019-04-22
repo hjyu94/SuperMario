@@ -17,5 +17,15 @@
 #include <memory.h>
 #include <tchar.h>
 
+#include <iostream>
+#include <list>
+#include <map>
+#include <vector>
+using namespace std;
 
 // TODO: reference additional headers your program requires here
+#include "Typedef.h"
+#include "Extern.h"
+#include "Enum.h"
+#include "Define.h"
+#include "Struct.h"

@@ -1,55 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Default">
+      <UniqueIdentifier>{96dd17b0-61f6-4b93-aee6-77bb7865aee5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="00. Maingame">
+      <UniqueIdentifier>{c2644dfc-b7b6-42f5-b10c-41ef86c98094}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="01. Obj">
+      <UniqueIdentifier>{75a6c54a-dbfd-46ea-82d9-0c34c7c354a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99. Headers">
+      <UniqueIdentifier>{0ef601ee-148b-405e-99a3-6362ae852fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Pattern">
+      <UniqueIdentifier>{019e1dcd-107c-4a45-bcb0-1134dce50a55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Manager">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="01. Obj\00. Obj">
+      <UniqueIdentifier>{631da24c-bb2c-4bcd-91da-0ad2cfa0bddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\01. Player">
+      <UniqueIdentifier>{47aa9acb-b19f-4bf6-a25c-4765c8a4f1e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\02. Monster">
+      <UniqueIdentifier>{eb7001ed-b3cf-44fd-a369-0d6ae25f1207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Item">
+      <UniqueIdentifier>{2f101572-1d86-4b60-9ac6-831886dcfcb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Map">
+      <UniqueIdentifier>{608e72c6-9bd8-44e3-bcb4-365e936fbddf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="슈퍼마리오.h">
+      <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Default</Filter>
     </ClInclude>
-    <ClInclude Include="슈퍼마리오.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MainGame.h">
+      <Filter>00. Maingame</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Typedef.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>98. Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>97. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>01. Obj\00. Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01. Obj\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgr.h">
+      <Filter>98. Pattern</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Default</Filter>
     </ClCompile>
     <ClCompile Include="슈퍼마리오.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Default</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="슈퍼마리오.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>00. Maingame</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>97. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>01. Obj\00. Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01. Obj\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMgr.cpp">
+      <Filter>98. Pattern</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico">
-      <Filter>Resource Files</Filter>
+      <Filter>Default</Filter>
     </Image>
     <Image Include="슈퍼마리오.ico">
-      <Filter>Resource Files</Filter>
+      <Filter>Default</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Default</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="슈퍼마리오.rc">
+      <Filter>Default</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
