@@ -20,6 +20,10 @@ void CPlayer::Initialize()
 	// 수정함
 	// 그래
 	// 으하하
+
+	// git add --all 
+	// git commit -m "Message"
+	// git push
 }
 
 int CPlayer::Update()
@@ -50,4 +54,5 @@ void CPlayer::Render(HDC hDC)
 
 void CPlayer::Release()
 {
+	
 }
