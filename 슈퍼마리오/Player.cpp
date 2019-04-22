@@ -17,6 +17,7 @@ void CPlayer::Initialize()
 	m_tInfo.fCY = PLAYER_S_FCY;
 	m_tInfo.fX = 100.f;
 	m_tInfo.fY = 100.f;
+	// ผ๖มควิ
 }
 
 int CPlayer::Update()
