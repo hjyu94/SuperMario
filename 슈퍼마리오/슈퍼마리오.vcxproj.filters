@@ -32,6 +32,9 @@
     <Filter Include="01. Obj\03. Item">
       <UniqueIdentifier>{2f101572-1d86-4b60-9ac6-831886dcfcb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\05. Bullet">
+      <UniqueIdentifier>{8d240e14-dc05-4165-a47f-046544a6b8b5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="01. Obj\04. Map">
       <UniqueIdentifier>{608e72c6-9bd8-44e3-bcb4-365e936fbddf}</UniqueIdentifier>
     </Filter>
@@ -79,11 +82,14 @@
     <ClInclude Include="Player.h">
       <Filter>01. Obj\01. Player</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMgr.h">
-      <Filter>98. Pattern</Filter>
-    </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>01. Obj\04. Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>01. Obj\05. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgr.h">
+      <Filter>97. Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -105,11 +111,14 @@
     <ClCompile Include="Player.cpp">
       <Filter>01. Obj\01. Player</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMgr.cpp">
-      <Filter>98. Pattern</Filter>
-    </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>01. Obj\04. Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>01. Obj\05. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMgr.cpp">
+      <Filter>97. Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

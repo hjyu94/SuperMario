@@ -30,10 +30,10 @@ protected:
 	INFO m_tInfo; 
 	RECT m_tRect; 
 	
-	float m_Vel_Y;
+	float m_Vel_Y;			// 중력방향 속도
 	bool m_bIsGrounded;
 
-	float m_fSpeed; 
+	float m_fSpeed;			// 가로 속도
 	float m_fAngle; 
 	bool m_bIsDead;
 };

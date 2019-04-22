@@ -20,6 +20,7 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
+	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
 }
 
 void CMainGame::Update()
@@ -35,7 +36,6 @@ void CMainGame::LateUpdate()
 void CMainGame::Render()
 {
 	Rectangle (m_hDC, 0, 0, WINCX, WINCY);
-	Rectangle(m_hDC, 0, 0, 500, 500);
 	CObjMgr::Get_Instance()->Render(m_hDC);
 }
 

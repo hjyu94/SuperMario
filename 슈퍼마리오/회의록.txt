@@ -43,6 +43,7 @@ Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 총알도 만들어야 함
 
 // 깃헙 쓰는 법
+- Collaborator 에 추가하기
 - 도구: 확장 및 업데이트 > 온라인: Github 검색 > 설치 > 재시작
 - SourceTree 설치
 - 클론 -> 작업... -> Pull -> Push

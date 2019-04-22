@@ -1,23 +1,19 @@
 #pragma once
 #include "Obj.h"
-class CPlayer :
+class CBullet :
 	public CObj
 {
 public:
-	CPlayer();
-	virtual ~CPlayer();
+	CBullet();
+	virtual ~CBullet();
 
 public:
-	// CObj을(를) 통해 상속됨
+	// Inherited via CObj
 	virtual void Initialize() override;
 	virtual int Update() override;
 	virtual void LateUpdate() override;
 	virtual void Render(HDC hDC) override;
 	virtual void Release() override;
 
-public:
-	// m_fAngle: 진행 방향
-	PLAYER::STATE m_eCurState;
-	PLAYER::STATE m_ePrevState;
 };
 
