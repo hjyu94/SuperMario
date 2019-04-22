@@ -45,6 +45,9 @@ int CPlayer::Update()
 
 void CPlayer::LateUpdate()
 {
+	// pull
+	// 수정하고
+	// commit
 }
 
 void CPlayer::Render(HDC hDC)
