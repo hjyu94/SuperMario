@@ -3,11 +3,12 @@
 
 #include "ObjMgr.h"
 #include "AbstractFactory.h"
+#include "LineMgr.h"
 
 #include "Bullet.h"
 #include "Monster.h"
 #include "Block.h"
-
+#include "MonsterBullet.h"
 CPlayer::CPlayer()
 {
 }
@@ -44,8 +45,11 @@ int CPlayer::Update()
 		return 0;
 	}
 
+	float fy = 0.f;
+	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, &fy);
+	
 	// 자유낙하
-	if (!m_bIsGrounded)
+	if (!m_bIsJumping)
 	{
 		m_Vel_Y += 0.4f;
 		m_tInfo.fY += m_Vel_Y;
@@ -62,14 +66,16 @@ int CPlayer::Update()
 
 	if (m_tInfo.fY >= WINCY - 100 - m_tInfo.fCY / 2)
 	{
-		m_bIsGrounded = true;
+		m_bIsJumping = true;
 	}
 
+
+
 	// 키 입력
-	if (GetAsyncKeyState(VK_SPACE) && m_bIsGrounded)
+	if (GetAsyncKeyState(VK_SPACE) && m_bIsJumping)
 	{
 		m_Vel_Y = -12.f;
-		m_bIsGrounded = false;
+		m_bIsJumping = false;
 	}
 
 	if (GetAsyncKeyState(VK_LEFT))
@@ -211,11 +217,11 @@ void CPlayer::Render(HDC hDC)
 	SelectObject(hDC, oldBrush);
 	DeleteObject(myBrush);
 	
-	// 맵
-	MoveToEx(hDC, 0, WINCY - 100, NULL);
-	LineTo(hDC, WINCX, WINCY - 100);
 
-	Rectangle(hDC, 100, WINCY - 200, 150, WINCY - 250);
+	// 상태값 표시
+	WCHAR lpOut[1024] = L"";
+	wsprintf(lpOut, L"Life: %d", m_iLife);
+	TextOut(hDC, 100, 100, lpOut, lstrlen(lpOut));
 }
 
 void CPlayer::Release()
@@ -239,7 +245,16 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 			--m_iLife;
 		}
 	}
-	
+
+	// 플레이어가 몬스터 총알과 부딪히면
+	if (nullptr != dynamic_cast<CMonsterBullet*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			--m_iLife;
+		}
+	}
+
 	// 블록과 부딪히면
 	if (nullptr != dynamic_cast<CBlock*>(pCounterObj))
 	{

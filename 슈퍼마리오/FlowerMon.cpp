@@ -4,8 +4,8 @@
 #include "ObjMgr.h"
 #include "AbstractFactory.h"
 #include "Bullet.h"
+#include "MonsterBullet.h"
 #include "Player.h"
-
 CFlowerMon::CFlowerMon()
 {
 }
@@ -62,7 +62,7 @@ int CFlowerMon::Update()
 			float fDeltaX = m_pTarget->Get_Info().fX - m_tInfo.fX;
 			float fDeltaY = m_pTarget->Get_Info().fY - m_tInfo.fY;
 			float fTheta = ToDegree(atan2(fDeltaY, fDeltaX)); // ¶óµð¾È
-			CBullet* pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tInfo.fY, fTheta);
+			CMonsterBullet* pBullet = CAbstractFactory<CMonsterBullet>::Create(m_tInfo.fX, m_tInfo.fY, fTheta);
 			CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER_BULLET, pBullet);
 			
 			BulletCoolTime = GetTickCount();

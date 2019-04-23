@@ -1,12 +1,11 @@
-//커밋테스트입니다 4:16
 #include "stdafx.h"
 #include "MainGame.h"
 #include "AbstractFactory.h"
 #include "CollisionMgr.h"
 #include "ObjMgr.h"
+#include "LineMgr.h"
 ///Obj
 #include "Player.h"
-#include "TileBlock.h"
 #include "NomalBlock.h"
 ///아이템 <-- 추후 블럭에 들어갈것
 #include "Coin.h"
@@ -14,7 +13,6 @@
 #include "GrowMushroom.h"
 #include "LifeMushroom.h"
 #include "Star.h"
-#include "TileBlock.h"
 #include "FlowerMon.h"
 #include "PlantBlock.h"
 
@@ -81,6 +79,7 @@ void CMainGame::Render()
 	{
 		Rectangle (m_hDC, 0, 0, WINCX, WINCY);
 		CObjMgr::Get_Instance()->Render(m_hDC);
+		CLineMgr::Get_Instance()->Render(m_hDC);
 	}
 }
 
@@ -89,5 +88,6 @@ void CMainGame::Release()
 	ReleaseDC(g_hWnd, m_hDC);
 
 	CObjMgr::Get_Instance()->Release();
+	CLineMgr::Get_Instance()->Release();
 }
 

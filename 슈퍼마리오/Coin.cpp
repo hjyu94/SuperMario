@@ -17,7 +17,7 @@ void CCoin::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
-	m_bIsGrounded = true;
+	m_bIsJumping = true;
 	m_tInfo.fX = 300.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
@@ -34,7 +34,7 @@ int CCoin::Update()
 	}
 
 	///생성 액션
-	if (m_bCreate_Action && m_bIsGrounded)
+	if (m_bCreate_Action && m_bIsJumping)
 	{
 		m_tInfo.fY -= (m_fSpeed - 3.f);
 		if (m_tInfo.fY <= m_fCreate_Y - ITEM_MOVE_SIZE)
@@ -42,7 +42,7 @@ int CCoin::Update()
 			m_bCreate_Action = false;
 		}
 	}
-	if (!m_bCreate_Action && m_bIsGrounded)
+	if (!m_bCreate_Action && m_bIsJumping)
 	{
 		m_tInfo.fX += m_fSpeed;
 	}
@@ -51,17 +51,17 @@ int CCoin::Update()
 	//충돌체크
 	if (m_tInfo.fX >= 425.f)
 	{
-		m_bIsGrounded = false;
+		m_bIsJumping = false;
 	}
 	//자유낙하
-	if (!m_bCreate_Action && !m_bIsGrounded)
+	if (!m_bCreate_Action && !m_bIsJumping)
 	{
 		m_Vel_Y += 0.4f;
 		m_tInfo.fY += m_Vel_Y;
 	}
 	if (m_tInfo.fY >= 100.f)
 	{
-		m_bIsGrounded = true;
+		m_bIsJumping = true;
 	}
 	else
 	{

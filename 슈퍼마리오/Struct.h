@@ -10,27 +10,32 @@ typedef struct tagInfo
 	float fCY;
 }INFO;
 
-//typedef struct tagLinePoint
-//{
-//	tagLinePoint(float _fX, float _fY)
-//	{
-//		fX = _fX;
-//		fY = _fY;
-//	}
-//
-//	float fX;
-//	float fY;
-//} LINEPOINT;
+typedef struct tagLinePos
+{
+	tagLinePos()
+	{
+		ZeroMemory(this, sizeof(tagLinePos));
+	}
+	tagLinePos(float _fX, float _fY)
+		:fX(_fX), fY(_fY)
+	{}
+	
+	float fX;
+	float fY;
+} LINEPOS;
 
-//typedef struct tagLine
-//{
-//	tagLine(LINEPOINT& lPoint, LINEPOINT& rPoint)
-//	{
-//		lPoint = lPoint;
-//		rPoint = rPoint;
-//	}
-//
-//	LINEPOINT lPoint;
-//	LINEPOINT rPoint;
-//	
-//} LINE;
+typedef struct tagLine
+{
+	tagLine()
+	{
+		ZeroMemory(this, sizeof(tagLine));
+	}
+	tagLine(LINEPOS& rLP, LINEPOS& rRP)
+		: tLeftPoint(rLP)
+		, tRightPoint(rRP)
+	{}
+
+	LINEPOS tLeftPoint;
+	LINEPOS tRightPoint;
+	
+} LINEINFO;

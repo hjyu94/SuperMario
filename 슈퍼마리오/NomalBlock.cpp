@@ -13,8 +13,8 @@ CNomalBlock::~CNomalBlock()
 
 void CNomalBlock::Initialize()
 {
-	m_tInfo.fCX = BLOCK_SIZE;
-	m_tInfo.fCY = BLOCK_SIZE;
+	m_tInfo.fCX = 50.f;
+	m_tInfo.fCY = 50.f;
 	///임의 위치
 	m_tInfo.fX = 400.f;
 	m_tInfo.fY = 395.f;
