@@ -1,5 +1,8 @@
 // push test
 /// 같은작업 testtttttt
+
+// 같은 작업 test 2
+
 #include "stdafx.h"
 #include "MainGame.h"
 
