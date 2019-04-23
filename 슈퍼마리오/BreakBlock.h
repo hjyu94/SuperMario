@@ -1,7 +1,7 @@
 #pragma once
-#include "Obj.h"
+#include "Block.h"
 class CBreakBlock 
-	:public CObj
+	:public CBlock
 {
 public:
 	CBreakBlock();

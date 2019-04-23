@@ -22,8 +22,7 @@ public:
 
 public:
 	// m_fAngle: 진행 방향
-	PLAYER::STATE m_eCurState;
-	PLAYER::STATE m_ePrevState;
+	PLAYER::STATE m_eState;
 
 	int m_iLife;
 };
