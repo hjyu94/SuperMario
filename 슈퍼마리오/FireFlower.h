@@ -18,4 +18,5 @@ public:
 private:
 	float m_fCreate_Y;
 	bool  m_bCreate_Action;
+	int iNum;
 };

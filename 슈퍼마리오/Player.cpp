@@ -87,20 +87,22 @@ int CPlayer::Update()
 		// 달리기: 원래 스피드 * 1.2
 		// 무적일때 달리기: 원래 스피드 * 1.2 * 1.2
 		// 적용 아직 제대로 안됨.
-
-		m_fAngle = 180;
-
-		float Speed = m_fSpeed;
-
-
-		if (GetAsyncKeyState(VK_SHIFT))
+		if (20.f <= m_tInfo.fX)
 		{
-			m_tInfo.fX -= Speed * 1.2;
-			m_eState = PLAYER::PS_RUNNING;
-		}
-		else
-		{
-			m_tInfo.fX -= Speed;
+			m_fAngle = 180;
+
+			float Speed = m_fSpeed;
+
+
+			if (GetAsyncKeyState(VK_SHIFT))
+			{
+				m_tInfo.fX -= Speed * 1.2;
+				m_eState = PLAYER::PS_RUNNING;
+			}
+			else
+			{
+				m_tInfo.fX -= Speed;
+			}
 		}
 	}
 
@@ -258,17 +260,34 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 	{
 		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
 		{
-			if (CObjMgr::Get_Instance()->Get_Player()->m_eCurState != PLAYER::PS_IDLE)
+
+			/*int RNum = ((rand() % 5) + 1);
+			if (1 == RNum)
 			{
-				// 큰 상태
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CCoin>());
 			}
-			
-			CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
-			
+			else if (2 == RNum)
+			{
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CFireFlower>());
+			}
+			else if (3 == RNum)
+			{
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CGrowMushroom>());
+			}
+			else if (4 == RNum)
+			{
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CLifeMushroom>());
+			}
+			else if (5 == RNum)
+			{
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
+			}*/
+
 			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
 				m_tInfo.fX += rc.right - rc.left;
+
 		}
 	}
 }

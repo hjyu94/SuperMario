@@ -7,8 +7,10 @@
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 CPlayer* CObjMgr::m_pPlayer = nullptr;
 
+
 CObjMgr::CObjMgr()
 {
+
 }
 
 
@@ -74,16 +76,12 @@ void CObjMgr::LateUpdate()
 		}
 	}
 
-	// 面倒 贸府
-	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::PLAYER]);
-	CCollisionMgr::CollisionRect(m_Objlist[OBJID::BLOCK], m_Objlist[OBJID::PLAYER]);
-	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER_BULLET], m_Objlist[OBJID::PLAYER]);
-	CCollisionMgr::EatItem(m_Objlist[OBJID::ITEM], m_Objlist[OBJID::PLAYER]);
-
-	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::BLOCK]);
-	
-
-	
+		// 面倒 贸府
+		CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::PLAYER]);
+		CCollisionMgr::CollisionRect(m_Objlist[OBJID::BLOCK], m_Objlist[OBJID::PLAYER]);
+		CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER_BULLET], m_Objlist[OBJID::PLAYER]);
+		CCollisionMgr::EatItem(m_Objlist[OBJID::ITEM], m_Objlist[OBJID::PLAYER]);
+		CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::BLOCK]);
 }
 
 void CObjMgr::Render(HDC hDC)

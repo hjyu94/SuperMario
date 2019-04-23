@@ -24,9 +24,6 @@ void CBreakBlock::Initialize()
 {
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
-	///임의 위치
-	m_tInfo.fX = 500.f;
-	m_tInfo.fY = 395.f;
 }
 
 int CBreakBlock::Update()
@@ -95,21 +92,23 @@ void CBreakBlock::Release()
 
 void CBreakBlock::Collision_Proc(CObj * pCounterObj)
 {
-}
 
-void CBreakBlock::CreateCoin()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CCoin>());
+		int Num = (rand() % 15) + 5;
+		{
+			if (7 == Num)
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CCoin>::Create(m_tInfo.fX, m_tInfo.fY));
+			else if (8 == Num)
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CFireFlower>::Create(m_tInfo.fX, m_tInfo.fY));
+			else if (9 == Num)
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create(m_tInfo.fX, m_tInfo.fY));
+			else if (10 == Num)
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CLifeMushroom>::Create(m_tInfo.fX, m_tInfo.fY));
+			else if (11 == Num)
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CStar>::Create(m_tInfo.fX, m_tInfo.fY));
+			else
+			{
+				return;
+			}
+		}
 }
-
-void CBreakBlock::CreateFireFlower()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CFireFlower>());
-}
-
-void CBreakBlock::CreateGrowMush()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
-}
-
 

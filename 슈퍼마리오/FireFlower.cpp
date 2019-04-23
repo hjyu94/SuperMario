@@ -3,7 +3,7 @@
 #include "BreakBlock.h"
 
 CFireFlower::CFireFlower()
-	:m_bCreate_Action(true), m_fCreate_Y(0.f)
+	:m_bCreate_Action(true)
 {
  
 }
@@ -17,13 +17,9 @@ void CFireFlower::Initialize()
 {
 	m_tInfo.fCX = 20.f;
 	m_tInfo.fCY = 40.f;
-	m_fSpeed = 5.f;
+	m_fSpeed = 3.f;
 	m_bIsGrounded = true;
-
-	m_tInfo.fX = 250.f;///일단 임의NUM ->블럭 위치
-	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
-
-	m_fCreate_Y = m_tInfo.fY;
+	iNum = 1;
 }
 
 int CFireFlower::Update()
@@ -31,14 +27,18 @@ int CFireFlower::Update()
 	if (m_bIsDead)
 	{
 		//죽었을때 
-		m_Vel_Y = 0.f;
 		return OBJ_DEAD;
+	}
+	if (1 == iNum)
+	{
+		m_fCreate_Y = m_tInfo.fY;
+		--iNum;
 	}
 
 	///생성 액션
 	if (m_bCreate_Action && m_bIsGrounded)
 	{
-		m_tInfo.fY -= (m_fSpeed - 3.f);
+		m_tInfo.fY -= (m_fSpeed);
 		if (m_tInfo.fY <= m_fCreate_Y - ITEM_MOVE_SIZE)
 		{
 			m_bCreate_Action = false;

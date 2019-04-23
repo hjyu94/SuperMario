@@ -20,6 +20,7 @@
 CMainGame::CMainGame()
 {
 	srand(unsigned(time(NULL)));
+
 }
 
 
@@ -105,14 +106,9 @@ void CMainGame::Initialize()
 	// 테스트
 	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, CAbstractFactory<CMushroomMon>::Create(300, 300));
 
-
-
 	//5) 선 그리기
 	CLineMgr::Get_Instance()->Initialize();
-
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(2800,540));
-
-
 }
 
 void CMainGame::Update()

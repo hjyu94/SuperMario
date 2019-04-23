@@ -29,20 +29,22 @@ void CCollisionMgr::CollisionRect(OBJLIST & DestList, OBJLIST & SourList)
 	}
 }
 
-void CCollisionMgr::CollisionSphere(OBJLIST & DestList, OBJLIST & SourList)
-{
-	for (auto& pDst : DestList)
+
+	void CCollisionMgr::CollisionSphere(OBJLIST & DestList, OBJLIST & SourList)
 	{
-		for (auto& pSrc : SourList)
+		for (auto& pDst : DestList)
 		{
-			if (CheckSphere(pDst, pSrc))
+			for (auto& pSrc : SourList)
 			{
-				pDst->Set_Dead();
-				pSrc->Set_Dead();
+				if (CheckSphere(pDst, pSrc))
+				{
+					pDst->Set_Dead();
+					pSrc->Set_Dead();
+				}
 			}
 		}
 	}
-}
+
 
 //æ∆¿Ã≈€ ∏‘±‚
 void CCollisionMgr::EatItem(OBJLIST & DestList, OBJLIST & SourList)
