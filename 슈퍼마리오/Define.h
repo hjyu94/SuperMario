@@ -17,17 +17,18 @@
 #define PLAYER_S_FCY 30
 
 #define PLAYER_B_FCX 50
-#define PLAYER_B_FCY 60
+#define PLAYER_B_FCY 50
 
-#define TILE_FCX 50
-#define TILE_FCY 40
+//#define TILE_FCX 50
+//#define TILE_FCY 40
 
 
 
 /// /// == 이창열추가
 #define ITEM_MOVE_SIZE 50.f
 #define TILE_BLOCK_FCX 50
-#define TILE_BLOCK_FCY 45
+//#define TILE_BLOCK_FCY 45
+#define TILE_BLOCK_FCY 50
 
 #define PLANT_BLOCK_FCX 100
 #define PLANT_BLOCK_FCY 160

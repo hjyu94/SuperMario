@@ -112,9 +112,6 @@
     <ClInclude Include="Monster.h">
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
-    <ClInclude Include="MonsterBullet.h">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClInclude>
     <ClInclude Include="PlantBlock.h">
       <Filter>01. Obj\05.Block</Filter>
     </ClInclude>
@@ -124,8 +121,21 @@
     <ClInclude Include="Block.h">
       <Filter>01. Obj\05.Block</Filter>
     </ClInclude>
-    <ClInclude Include="LineMgr.h" />
-    <ClInclude Include="Line.h" />
+    <ClInclude Include="LineMgr.h">
+      <Filter>97. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>97. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterBullet.h">
+      <Filter>01. Obj\05. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="TortoiseMon.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="MushroomMon.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -173,9 +183,6 @@
     <ClCompile Include="Monster.cpp">
       <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
-    <ClCompile Include="MonsterBullet.cpp">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClCompile>
     <ClCompile Include="PlantBlock.cpp">
       <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
@@ -185,8 +192,21 @@
     <ClCompile Include="Block.cpp">
       <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
-    <ClCompile Include="LineMgr.cpp" />
-    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="LineMgr.cpp">
+      <Filter>97. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>97. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterBullet.cpp">
+      <Filter>01. Obj\05. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="TortoiseMon.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="MushroomMon.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico">
@@ -195,6 +215,8 @@
     <Image Include="슈퍼마리오.ico">
       <Filter>Default</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\Documents\NES - Super Mario Bros - World 1-1.png" />
+    <Image Include="..\..\..\..\..\Documents\NES - Super Mario Bros - World 1-2.png" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt">

@@ -26,7 +26,10 @@ public:
 		}
 	}
 
+	void ScrollToRight(float _fSpeed);
+
 public:
+	void AddLine(float x1, float y1, float x2, float y2);
 	void Initialize();
 	void Render(HDC hDC);
 	void Release();

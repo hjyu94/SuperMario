@@ -20,6 +20,11 @@ void CPlantBlock::Initialize()
 int CPlantBlock::Update()
 {
 	CObj::UpdateRect();
+	if (!m_bInit)
+	{
+		CLineMgr::Get_Instance()->AddLine(m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.top);
+		m_bInit = true;
+	}
 	return 0;
 }
 

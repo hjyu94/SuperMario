@@ -29,3 +29,4 @@ using namespace std;
 #include "Enum.h"
 #include "Define.h"
 #include "Struct.h"
+#include "LineMgr.h"

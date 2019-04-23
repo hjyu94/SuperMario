@@ -47,13 +47,23 @@ void CMainGame::Initialize()
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CStar>::Create());
 
 	//3) 몬스터
-	CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
+	/*CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
 	CFlowerMon* pFlowerMon = CAbstractFactory<CFlowerMon>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
 	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, pFlowerMon);
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant);
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant);*/
 
 	//4) 벽, Obj, 타일 ????
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(300, WINCY-PLANT_BLOCK_FCY/2-100));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(680,400));
+
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(1200, 530));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(1600, 510));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(1940, 460));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(2400, 460));
+
+	//5) 선 그리기
+	CLineMgr::Get_Instance()->Initialize();
+
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(2800,540));
 
 
 }

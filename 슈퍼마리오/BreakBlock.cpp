@@ -15,13 +15,18 @@ void CBreakBlock::Initialize()
 {
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
-	///임의 위치
-	m_tInfo.fX = 500.f;
-	m_tInfo.fY = 395.f;
 }
 
 int CBreakBlock::Update()
 {
+	CObj::UpdateRect();
+
+	if (!m_bInit)
+	{
+		CLineMgr::Get_Instance()->AddLine(m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.top);
+		m_bInit = true;
+	}
+
 	if (m_bIsDead)
 	{
 		//죽었을때 

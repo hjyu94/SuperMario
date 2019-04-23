@@ -23,8 +23,8 @@ void CPlayer::Initialize()
 {
 	m_tInfo.fCX = PLAYER_S_FCX;
 	m_tInfo.fCY = PLAYER_S_FCY;
-	m_tInfo.fX = - PLAYER_S_FCX/2;
-	m_tInfo.fY = WINCY-100-PLAYER_S_FCX/2;
+	m_tInfo.fX = -10;
+	m_tInfo.fY = 540 - PLAYER_S_FCY / 2;
 
 	m_fSpeed = 5.f;
 	m_eCurState = PLAYER::PS_IDLE;
@@ -41,13 +41,15 @@ int CPlayer::Update()
 	{
 		m_tInfo.fX += m_fSpeed*0.5f;
 		CObj::UpdateRect();
+
 		if(m_tInfo.fX > 100)
 			m_bInit = true;
+
 		return 0;
 	}
 
 	// 자유낙하
-	if (!m_bIsGrounded)
+	/*if (!m_bIsGrounded)
 	{
 		m_Vel_Y += 0.4f;
 		m_tInfo.fY += m_Vel_Y;
@@ -65,7 +67,25 @@ int CPlayer::Update()
 	if (m_tInfo.fY >= WINCY - 100 - m_tInfo.fCY / 2)
 	{
 		m_bIsGrounded = true;
+	}*/
+
+	float fy = 0.f;
+	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, &fy);
+
+	if (!m_bIsGrounded)
+	{
+		m_Vel_Y += 0.4f;
+		m_tInfo.fY += m_Vel_Y;
+
+		if (bIsColl && m_tInfo.fY > fy)
+		{
+			m_bIsGrounded = true;
+			m_Vel_Y = 0.f;
+			m_tInfo.fY = fy - PLAYER_S_FCY /2;
+		}
 	}
+	else if (bIsColl)
+		m_tInfo.fY = fy - PLAYER_S_FCY / 2;
 
 	// 키 입력
 	if (GetAsyncKeyState(VK_SPACE) && m_bIsGrounded)
@@ -120,11 +140,14 @@ int CPlayer::Update()
 		}
 		else
 		{
-			m_tInfo.fX += m_fSpeed;
+ 			m_tInfo.fX += m_fSpeed;
 			m_ePrevState = m_eCurState;
 			//m_eCurState = PLAYER::PS_IDLE;
 			if (m_tInfo.fX > 400)
+			{
 				CObjMgr::Get_Instance()->ScrollToRight(m_fSpeed);
+				CLineMgr::Get_Instance()->ScrollToRight(m_fSpeed);
+			}
 		}
 	}
 

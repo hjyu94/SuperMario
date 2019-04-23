@@ -168,6 +168,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterBullet.h" />
     <ClInclude Include="BreakBlock.h" />
+    <ClInclude Include="MushroomMon.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjMgr.h" />
     <ClInclude Include="PlantBlock.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TortoiseMon.h" />
     <ClInclude Include="Typedef.h" />
     <ClInclude Include="슈퍼마리오.h" />
   </ItemGroup>
@@ -201,6 +203,7 @@
     <ClCompile Include="BreakBlock.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterBullet.cpp" />
+    <ClCompile Include="MushroomMon.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="ObjMgr.cpp" />
     <ClCompile Include="PlantBlock.cpp" />
@@ -214,12 +217,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TortoiseMon.cpp" />
     <ClCompile Include="슈퍼마리오.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="슈퍼마리오.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\Documents\NES - Super Mario Bros - World 1-1.png" />
+    <Image Include="..\..\..\..\..\Documents\NES - Super Mario Bros - World 1-2.png" />
     <Image Include="small.ico" />
     <Image Include="슈퍼마리오.ico" />
   </ItemGroup>
