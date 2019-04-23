@@ -149,25 +149,33 @@
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Bullet.h" />
-    <ClInclude Include="Coin.h" />
+    <ClInclude Include="Coin.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
     <ClInclude Include="FlowerMon.h" />
-    <ClInclude Include="FireFlower.h" />
+    <ClInclude Include="FireFlower.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GrowMushroom.h" />
-    <ClInclude Include="LifeMushroom.h" />
+    <ClInclude Include="LifeMushroom.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterBullet.h" />
-    <ClInclude Include="NomalBlock.h" />
+    <ClInclude Include="BreakBlock.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjMgr.h" />
     <ClInclude Include="PlantBlock.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Star.h" />
+    <ClInclude Include="Star.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -178,21 +186,29 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Coin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="CollisionMgr.cpp" />
-    <ClCompile Include="FireFlower.cpp" />
+    <ClCompile Include="FireFlower.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="FlowerMon.cpp" />
     <ClCompile Include="GrowMushroom.cpp" />
-    <ClCompile Include="LifeMushroom.cpp" />
+    <ClCompile Include="LifeMushroom.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="NomalBlock.cpp" />
+    <ClCompile Include="BreakBlock.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterBullet.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="ObjMgr.cpp" />
     <ClCompile Include="PlantBlock.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Star.cpp" />
+    <ClCompile Include="Star.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

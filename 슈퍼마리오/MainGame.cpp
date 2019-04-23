@@ -7,7 +7,7 @@
 ///Obj
 #include "Player.h"
 #include "TileBlock.h"
-#include "NomalBlock.h"
+#include "BreakBlock.h"
 ///아이템 <-- 추후 블럭에 들어갈것
 #include "Coin.h"
 #include "FireFlower.h"
@@ -34,7 +34,7 @@ void CMainGame::Initialize()
 
 	///객체 생성
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CNomalBlock>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create());
 
 	//1) 플레이어
 	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();

@@ -91,9 +91,6 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>97. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="NomalBlock.h">
-      <Filter>01. Obj\05.Block</Filter>
-    </ClInclude>
     <ClInclude Include="LifeMushroom.h">
       <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
@@ -127,6 +124,9 @@
     <ClInclude Include="PlantBlock.h">
       <Filter>01. Obj\05.Block</Filter>
     </ClInclude>
+    <ClInclude Include="BreakBlock.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -152,9 +152,6 @@
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>97. Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="NomalBlock.cpp">
-      <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
     <ClCompile Include="LifeMushroom.cpp">
       <Filter>01. Obj\03. Item</Filter>
@@ -187,6 +184,9 @@
       <Filter>01. Obj\04. Map</Filter>
     </ClCompile>
     <ClCompile Include="PlantBlock.cpp">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakBlock.cpp">
       <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
   </ItemGroup>
