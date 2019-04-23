@@ -18,10 +18,13 @@ public:
 	
 public:
 	CObj* Create_Bullet();
+	int Get_iLife();
 
 public:
 	// m_fAngle: 진행 방향
 	PLAYER::STATE m_eCurState;
 	PLAYER::STATE m_ePrevState;
+
+	int m_iLife;
 };
 

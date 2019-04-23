@@ -30,19 +30,19 @@ void CMainGame::Initialize()
 	//1) 플레이어
 	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, pPlayer);
-	CObjMgr::Get_Instance()->Set_Player(pPlayer);
+	CObjMgr::Get_Instance()->Set_Player((CPlayer*)pPlayer);
 	
 	//2) 아이템
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
 
 	//3) 몬스터
-	CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, 500);
-	CFlowerMon* pFlowerMon = CAbstractFactory<CFlowerMon>::Create(500, 500);
+	CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
+	CFlowerMon* pFlowerMon = CAbstractFactory<CFlowerMon>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
 	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, pFlowerMon);
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant);
 
-	CPlantBlock* pPlant2 = CAbstractFactory<CPlantBlock>::Create(300, 500);
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant2);
+	//4) 벽, Obj, 타일 ????
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(300, WINCY-PLANT_BLOCK_FCY/2-100));
 
 }
 
@@ -58,8 +58,16 @@ void CMainGame::LateUpdate()
 
 void CMainGame::Render()
 {
-	Rectangle (m_hDC, 0, 0, WINCX, WINCY);
-	CObjMgr::Get_Instance()->Render(m_hDC);
+	if (CObjMgr::Get_Instance()->Get_Player()->Get_iLife() < 0)
+	{
+		WCHAR lpOut[1024] = L"Game Over";
+		TextOut(m_hDC, WINCX / 2, WINCY / 2, lpOut, lstrlen(lpOut));
+	}
+	else
+	{
+		Rectangle (m_hDC, 0, 0, WINCX, WINCY);
+		CObjMgr::Get_Instance()->Render(m_hDC);
+	}
 }
 
 void CMainGame::Release()

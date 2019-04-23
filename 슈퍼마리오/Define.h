@@ -30,6 +30,9 @@
 #define TILE_BLOCK_FCY 45
 
 #define PLANT_BLOCK_FCX 100
-#define PLANT_BLOCK_FCY 180
+#define PLANT_BLOCK_FCY 160
 #define FLOWER_MON_FCX 50
 #define FLOWER_MON_FCY 50
+
+#define BULLET_FCX 10
+#define BULLET_FCY 10

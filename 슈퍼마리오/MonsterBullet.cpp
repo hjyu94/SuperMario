@@ -13,8 +13,8 @@ CMonsterBullet::~CMonsterBullet()
 
 void CMonsterBullet::Initialize()
 {
-	m_tInfo.fCX = 10.f;
-	m_tInfo.fCY = 10.f;
+	m_tInfo.fCX = BULLET_FCX;
+	m_tInfo.fCY = BULLET_FCY;
 	m_fSpeed = 10.f;
 }
 

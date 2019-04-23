@@ -1,7 +1,7 @@
 #pragma once
 #include "Monster.h"
 
-class CPlantBlock;
+class CPlayer;
 
 class CFlowerMon :
 	public CMonster
@@ -27,6 +27,6 @@ private:
 	bool m_isStop;
 
 	DWORD BulletCoolTime;
-	CObj* m_pTarget;
+	CPlayer* m_pTarget;
 };
 

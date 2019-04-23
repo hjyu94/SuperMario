@@ -4,6 +4,7 @@
 #include "ObjMgr.h"
 #include "AbstractFactory.h"
 #include "Bullet.h"
+#include "Player.h"
 
 CFlowerMon::CFlowerMon()
 {
@@ -19,7 +20,6 @@ void CFlowerMon::Initialize()
 	m_tInfo.fCX = FLOWER_MON_FCX;
 	m_tInfo.fCY = FLOWER_MON_FCY;
 	m_fSpeed = 3.f;
-	m_bInit = false;
 	m_Time = GetTickCount();
 	BulletCoolTime = GetTickCount();
 	m_isStop = true;

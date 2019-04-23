@@ -40,5 +40,6 @@ protected:
 	bool m_bIsDead;
 
 	DWORD m_Time;
+	bool m_bInit;
 };
 

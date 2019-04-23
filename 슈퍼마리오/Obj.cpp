@@ -5,6 +5,7 @@
 CObj::CObj()
 	:m_bIsDead(false)
 	, m_bIsGrounded(false)
+	, m_bInit(false)
 	, m_fAngle(0.f)
 	, m_Vel_Y(0)
 {

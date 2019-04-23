@@ -21,17 +21,29 @@ void CPlayer::Initialize()
 {
 	m_tInfo.fCX = PLAYER_S_FCX;
 	m_tInfo.fCY = PLAYER_S_FCY;
-	m_tInfo.fX = 100.f;
-	m_tInfo.fY = 100.f;
+	m_tInfo.fX = - PLAYER_S_FCX/2;
+	m_tInfo.fY = WINCY-100-PLAYER_S_FCX/2;
 
 	m_fSpeed = 5.f;
 	m_eCurState = PLAYER::PS_IDLE;
 	m_ePrevState = PLAYER::PS_IDLE;
 	m_fAngle = 0; // 처음 진행 방향: 오른쪽: 0도
+
+	m_iLife = 3;
 }
 
 int CPlayer::Update()
 {
+	// 왼쪽에서 나오는 인트로
+	if (!m_bInit)
+	{
+		m_tInfo.fX += m_fSpeed*0.5f;
+		CObj::UpdateRect();
+		if(m_tInfo.fX > 100)
+			m_bInit = true;
+		return 0;
+	}
+
 	// 자유낙하
 	if (!m_bIsGrounded)
 	{
@@ -100,12 +112,17 @@ int CPlayer::Update()
 			m_tInfo.fX += m_fSpeed * 1.5;
 			m_ePrevState = m_eCurState;
 			m_eCurState = PLAYER::PS_RUNNING;
+	
+			if(m_tInfo.fX > 400)
+				CObjMgr::Get_Instance()->ScrollToRight(m_fSpeed * 1.5);
 		}
 		else
 		{
 			m_tInfo.fX += m_fSpeed;
 			m_ePrevState = m_eCurState;
 			//m_eCurState = PLAYER::PS_IDLE;
+			if (m_tInfo.fX > 400)
+				CObjMgr::Get_Instance()->ScrollToRight(m_fSpeed);
 		}
 	}
 
@@ -219,6 +236,7 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
 				m_tInfo.fX += rc.right - rc.left;
+			--m_iLife;
 		}
 	}
 	
@@ -247,4 +265,9 @@ CObj * CPlayer::Create_Bullet()
 	// 플레이어가 작을 때, 클 때 총알 튀는 폭이 다른가..?
 
 	return pBullet;
+}
+
+int CPlayer::Get_iLife()
+{
+	return m_iLife;
 }

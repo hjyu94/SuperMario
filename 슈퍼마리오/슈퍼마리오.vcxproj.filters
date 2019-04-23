@@ -38,6 +38,9 @@
     <Filter Include="01. Obj\06. Block">
       <UniqueIdentifier>{506c5d4a-d20f-415a-9f2b-8c7139aa4bbf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\07. Flag">
+      <UniqueIdentifier>{d2c51cce-b1b3-4d66-bf96-2bab4555bd71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="슈퍼마리오.h">

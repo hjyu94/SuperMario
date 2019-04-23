@@ -4,7 +4,7 @@
 #include "CollisionMgr.h"
 
 CObjMgr* CObjMgr::m_pInstance = nullptr;
-CObj* CObjMgr::m_pPlayer = nullptr;
+CPlayer* CObjMgr::m_pPlayer = nullptr;
 
 CObjMgr::CObjMgr()
 {
@@ -103,12 +103,25 @@ void CObjMgr::Release()
 	}
 }
 
-CObj* CObjMgr::Get_Player()
+void CObjMgr::ScrollToRight(float _fSpeed)
+{
+	for (int i = 0; i < OBJID::END; ++i)
+	{
+		for (auto& pObj : m_Objlist[i])
+		{
+			float fCurrentY = pObj->Get_Info().fY;
+			float fCurrentX = pObj->Get_Info().fX;
+			pObj->Set_Pos(fCurrentX - _fSpeed, fCurrentY);
+		}
+	}
+}
+
+CPlayer* CObjMgr::Get_Player()
 {
 	return m_pPlayer;
 }
 
-void CObjMgr::Set_Player(CObj * _player)
+void CObjMgr::Set_Player(CPlayer * _player)
 {
 	m_pPlayer = _player;
 }

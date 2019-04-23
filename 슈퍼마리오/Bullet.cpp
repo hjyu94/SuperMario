@@ -13,8 +13,8 @@ CBullet::~CBullet()
 
 void CBullet::Initialize()
 {
-	m_tInfo.fCX = 10.f;
-	m_tInfo.fCY = 10.f;
+	m_tInfo.fCX = BULLET_FCX;
+	m_tInfo.fCY = BULLET_FCY;
 	m_fSpeed = 10.f;
 	//m_fAngle = 0; // 플레이어가 총알 만들 때 값 넣어준다.
 	m_fBoundary = 30.f;
