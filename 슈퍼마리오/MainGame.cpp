@@ -1,5 +1,3 @@
-// push test
-/// 같은작업 testtttttt
 #include "stdafx.h"
 #include "MainGame.h"
 
@@ -8,7 +6,6 @@
 #include "ObjMgr.h"
 
 #include "Player.h"
-#include "GrowMushroom.h"
 
 CMainGame::CMainGame()
 {
@@ -23,10 +20,7 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
-
-	///객체 생성
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
 }
 
 void CMainGame::Update()
