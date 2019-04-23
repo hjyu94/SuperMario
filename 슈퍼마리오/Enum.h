@@ -3,7 +3,7 @@
 namespace OBJID
 {
 	enum ID {
-		MAP, PLAYER, MONSTER, BULLET, ITEM, END
+		BLOCK, PLAYER, MONSTER, BULLET, ITEM, END
 	};
 }
 

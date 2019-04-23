@@ -19,10 +19,12 @@ PowerItem	별(한동안 무적), : 움직임
 Coin		동전,
 
 # obj
-NormalBox			ㅁ 아래에서 점프 깨짐(작을때는 못 깸), 올라탈 수 있음
-CoinBox				ㅁ 계속 동전이 나옴. 안 깨짐. 올라타기 가능.
-MultiItemBox		ㅁ ? 네모, 여러번 네모가 아이템을 다 뱉으면 변하는 네모
-ItemBox				? 네모 : 한번 머리를 박으면 아이템 나옴
+TileBlock			바닥에 깔리는 맵
+NormalBlock			ㅁ 아래에서 점프 깨짐(작을때는 못 깸), 올라탈 수 있음
+CoinBlock			ㅁ 계속 동전이 나옴. 안 깨짐. 올라타기 가능.
+MultiItemBlock		ㅁ ? 네모, 여러번 네모가 아이템을 다 뱉으면 변하는 네모
+ItemBlock			? 네모 : 한번 머리를 박으면 아이템 나옴
+
 Plant, MonsPlant	초록색 화분(2종류, 하나는 꽃 몬스터가 나옴)
 y축발판		        y 축으로 움직이는 발판
 Flag				깃발(플레이어가 쭉 타고 내려옴)

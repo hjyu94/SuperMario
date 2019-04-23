@@ -8,6 +8,7 @@
 
 #include "Player.h"
 #include "GrowMushroom.h"
+#include "TileBlock.h"
 
 CMainGame::CMainGame()
 {
