@@ -262,9 +262,9 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 	// this(플레이어가)가 몬스터와 부딪히면
 	if (nullptr != dynamic_cast<CMonster*>(pCounterObj))
 	{
-		if(IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
 		{
-			if(m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
 				m_tInfo.fX += rc.right - rc.left;
@@ -292,7 +292,7 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 				m_tInfo.fX += rc.right - rc.left;
 		}
 	}
- 
+
 	// 플레이어가 클때 부숴지는 블록에 충돌할 경우
 	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))
 	{
@@ -302,17 +302,21 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 			{
 				// 큰 상태
 			}
-			
-			CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
-			
+
 			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
 				m_tInfo.fX += rc.right - rc.left;
+
+
+				/*CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CCoin>());*/
+			/*	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CFireFlower>());*/
+	     		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CGrowMushroom>());
+				CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CLifeMushroom>());
+				//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
+			}
 		}
 	}
-}
-
 CObj * CPlayer::Create_Bullet()
 {
 	CBullet* pBullet = nullptr;

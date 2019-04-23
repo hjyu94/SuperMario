@@ -18,6 +18,7 @@
 
 CMainGame::CMainGame()
 {
+	srand(unsigned(time(NULL)));
 }
 
 
@@ -59,8 +60,6 @@ void CMainGame::Initialize()
 	CLineMgr::Get_Instance()->Initialize();
 
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(2800,540));
-
-
 }
 
 void CMainGame::Update()
