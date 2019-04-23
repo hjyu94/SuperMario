@@ -8,9 +8,13 @@ public:
 public:
 	static void CollisionRect(OBJLIST& DestList, OBJLIST& SourList);
 	static void CollisionSphere(OBJLIST& DestList, OBJLIST& SourList);
-	static void EatItem(OBJLIST& DestList, OBJLIST& SourList);
 
+	///
+	static void EatItem(OBJLIST& DestList, OBJLIST& SourList);
+	static void CollisionRectEX(OBJLIST& DestList, OBJLIST& SourList);
 private:
 	static bool CheckSphere(CObj* pDest, CObj* pSour);
+	///
+	static bool CheckPlayerBlockColl(CObj* pDest, CObj* pSour, float* pMoveX, float* pMoveY);
 };
 

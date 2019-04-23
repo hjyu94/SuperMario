@@ -1,6 +1,14 @@
 #include "stdafx.h"
 #include "BreakBlock.h"
 
+#include "ObjMgr.h"
+#include "AbstractFactory.h"
+
+#include "Coin.h"
+#include "FireFlower.h"
+#include "GrowMushroom.h"
+#include "LifeMushroom.h"
+#include "Star.h"
 
 CBreakBlock::CBreakBlock()
 {
@@ -37,6 +45,7 @@ int CBreakBlock::Update()
 
 void CBreakBlock::LateUpdate()
 {
+	
 }
 
 void CBreakBlock::Render(HDC hDC)
@@ -56,4 +65,29 @@ void CBreakBlock::Render(HDC hDC)
 
 void CBreakBlock::Release()
 {
+}
+
+void CBreakBlock::CreateCoin()
+{
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CCoin>());
+}
+
+void CBreakBlock::CreateFireFlower()
+{
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CFireFlower>());
+}
+
+void CBreakBlock::CreateGrowMush()
+{
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
+}
+
+void CBreakBlock::CreateLifeMush()
+{
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CLifeMushroom>());
+}
+
+void CBreakBlock::CreateStar()
+{
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CStar>());
 }

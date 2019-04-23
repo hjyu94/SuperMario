@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Obj.h"
+
 class CFireFlower :
 	public CObj
 {
