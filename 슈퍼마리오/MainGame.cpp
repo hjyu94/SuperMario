@@ -15,6 +15,7 @@
 #include "FlowerMon.h"
 #include "PlantBlock.h"
 #include "BreakBlock.h"
+#include "MushroomMon.h"
 
 CMainGame::CMainGame()
 {
@@ -101,6 +102,8 @@ void CMainGame::Initialize()
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(5350, 400));
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(5400, 400));
 
+	// Å×½ºÆ®
+	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, CAbstractFactory<CMushroomMon>::Create(300, 300));
 
 
 
