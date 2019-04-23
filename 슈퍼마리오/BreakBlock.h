@@ -23,11 +23,5 @@ public:
 		pObj->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 		return pObj;
 	}
-private:
-	void CreateCoin();
-	void CreateFireFlower();
-	void CreateGrowMush();
-	void CreateLifeMush();
-	void CreateStar();
 };
 

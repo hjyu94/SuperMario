@@ -40,6 +40,13 @@ int CBreakBlock::Update()
 		//Á×¾úÀ»¶§ 
 		return OBJ_DEAD;
 	}
+
+		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CCoin>());
+		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CFireFlower>());
+		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
+		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CLifeMushroom>());
+		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CStar>());
+
 	return OBJ_ALIVE;
 }
 
@@ -67,27 +74,4 @@ void CBreakBlock::Release()
 {
 }
 
-void CBreakBlock::CreateCoin()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CCoin>());
-}
 
-void CBreakBlock::CreateFireFlower()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CFireFlower>());
-}
-
-void CBreakBlock::CreateGrowMush()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
-}
-
-void CBreakBlock::CreateLifeMush()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CLifeMushroom>());
-}
-
-void CBreakBlock::CreateStar()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CStar>());
-}
