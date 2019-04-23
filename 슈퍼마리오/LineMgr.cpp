@@ -38,8 +38,6 @@ void CLineMgr::Initialize()
 		,{ 3670, 540 },{ 6310,540 }
 		,{ 6400, 540 },{ 8750,540 }
 	};
-
-	
 	
 	m_listLine.emplace_back(new CLine(LINEINFO(tPosArr[0], tPosArr[1])));
 	m_listLine.emplace_back(new CLine(LINEINFO(tPosArr[2], tPosArr[3])));
@@ -68,7 +66,7 @@ void CLineMgr::Release()
 	m_listLine.clear();
 }
 
-bool CLineMgr::LineCollision(float fInX, float * pOutY)
+bool CLineMgr::LineCollision(float fInX, float fInY, float * pOutY)
 {
 	if (m_listLine.empty())
 		return false;
@@ -80,7 +78,8 @@ bool CLineMgr::LineCollision(float fInX, float * pOutY)
 		if (fInX >= pLine->Get_LineInfo().tLeftPoint.fX
 			&& fInX < pLine->Get_LineInfo().tRightPoint.fX)
 		{
-			pTarget = pLine;
+			if(fInY < pLine->Get_LineInfo().tLeftPoint.fY)
+				pTarget = pLine;
 		}
 	}
 

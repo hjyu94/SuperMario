@@ -10,6 +10,13 @@
 #include "BreakBlock.h"
 #include "MonsterBullet.h"
 #include "Block.h"
+#include "BreakBlock.h"
+#include "Coin.h"
+#include "FireFlower.h"
+#include "GrowMushroom.h"
+#include "LifeMushroom.h"
+#include "Star.h"
+
 CPlayer::CPlayer()
 {
 }
@@ -70,7 +77,7 @@ int CPlayer::Update()
 	}*/
 
 	float fy = 0.f;
-	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, &fy);
+	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, m_tInfo.fY, &fy);
 
 	if (!m_bIsGrounded)
 	{
@@ -295,8 +302,9 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 			{
 				// 큰 상태
 			}
-
-
+			
+			CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
+			
 			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면

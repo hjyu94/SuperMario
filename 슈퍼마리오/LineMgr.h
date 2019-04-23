@@ -35,7 +35,7 @@ public:
 	void Release();
 
 public:
-	bool LineCollision(float fInX, float* pOutY);
+	bool LineCollision(float fInX, float fInY, float * pOutY);
 
 private:
 	static CLineMgr* m_pInstance;

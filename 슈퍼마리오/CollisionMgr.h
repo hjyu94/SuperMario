@@ -11,10 +11,10 @@ public:
 
 	///
 	static void EatItem(OBJLIST& DestList, OBJLIST& SourList);
-	static void CollisionRectEX(OBJLIST& DestList, OBJLIST& SourList);
+	//static void CollisionRectEX(OBJLIST& DestList, OBJLIST& SourList);
 private:
 	static bool CheckSphere(CObj* pDest, CObj* pSour);
 	///
-	static bool CheckPlayerBlockColl(CObj* pDest, CObj* pSour, float* pMoveX, float* pMoveY);
+	//static bool CheckPlayerBlockColl(CObj* pDest, CObj* pSour, float* pMoveX, float* pMoveY);
 };
 

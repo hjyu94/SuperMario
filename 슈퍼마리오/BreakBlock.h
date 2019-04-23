@@ -23,6 +23,9 @@ public:
 		pObj->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 		return pObj;
 	}
+
+	virtual void Collision_Proc(CObj* pCounterObj) override;
+
 private:
 	void CreateCoin();
 	void CreateFireFlower();

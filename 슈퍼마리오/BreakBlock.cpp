@@ -9,6 +9,7 @@
 #include "GrowMushroom.h"
 #include "LifeMushroom.h"
 #include "Star.h"
+#include "Player.h"
 
 CBreakBlock::CBreakBlock()
 {
@@ -68,6 +69,14 @@ void CBreakBlock::Render(HDC hDC)
 
 void CBreakBlock::Release()
 {
+}
+
+void CBreakBlock::Collision_Proc(CObj * pCounterObj)
+{
+	if (dynamic_cast<CPlayer*>(pCounterObj))
+	{
+		m_bIsDead = true;
+	}
 }
 
 void CBreakBlock::CreateCoin()

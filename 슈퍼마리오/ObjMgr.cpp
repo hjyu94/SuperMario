@@ -78,9 +78,8 @@ void CObjMgr::LateUpdate()
 	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::PLAYER]);
 	CCollisionMgr::CollisionRect(m_Objlist[OBJID::BLOCK], m_Objlist[OBJID::PLAYER]);
 	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER_BULLET], m_Objlist[OBJID::PLAYER]);
-
 	CCollisionMgr::EatItem(m_Objlist[OBJID::ITEM], m_Objlist[OBJID::PLAYER]);
-	CCollisionMgr::CollisionRectEX(m_Objlist[OBJID::OBjBLOCK], m_Objlist[OBJID::PLAYER]);
+	
 }
 
 void CObjMgr::Render(HDC hDC)

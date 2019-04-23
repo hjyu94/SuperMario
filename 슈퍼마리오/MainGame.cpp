@@ -39,7 +39,7 @@ void CMainGame::Initialize()
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, pPlayer);
 	CObjMgr::Get_Instance()->Set_Player((CPlayer*)pPlayer);
 	
-	CObjMgr::Get_Instance()->AddObject(OBJID::OBjBLOCK, CAbstractFactory<CBreakBlock>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create());
 
 	//3) ∏ÛΩ∫≈Õ
 	/*CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);
