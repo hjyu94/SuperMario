@@ -38,8 +38,8 @@
     <Filter Include="01. Obj\04. Map">
       <UniqueIdentifier>{608e72c6-9bd8-44e3-bcb4-365e936fbddf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\06. Block">
-      <UniqueIdentifier>{506c5d4a-d20f-415a-9f2b-8c7139aa4bbf}</UniqueIdentifier>
+    <Filter Include="01. Obj\05.Block">
+      <UniqueIdentifier>{11f5e273-710b-4b32-85d9-5eb70a0d7caa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -91,14 +91,24 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>97. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="GrowMushroom.h">
+    <ClInclude Include="TileBlock.h" />
+    <ClInclude Include="NomalBlock.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeMushroom.h">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="FireFlower.h">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
       <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
     <ClInclude Include="GrowMushroom.h">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="TileBlock.h">
-      <Filter>01. Obj\06. Block</Filter>
+      <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,14 +136,24 @@
     <ClCompile Include="ObjMgr.cpp">
       <Filter>97. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="GrowMushroom.cpp">
+    <ClCompile Include="TileBlock.cpp" />
+    <ClCompile Include="NomalBlock.cpp">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeMushroom.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="FireFlower.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
       <Filter>01. Obj\03. Item</Filter>
     </ClCompile>
     <ClCompile Include="GrowMushroom.cpp">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="TileBlock.cpp">
-      <Filter>01. Obj\06. Block</Filter>
+      <Filter>01. Obj\03. Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

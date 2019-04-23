@@ -2,6 +2,7 @@
 #include "ObjMgr.h"
 #include "Obj.h"
 
+#include "CollisionMgr.h"
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 
 CObjMgr::CObjMgr()
@@ -71,7 +72,7 @@ void CObjMgr::LateUpdate()
 		}
 	}
 
-	// 面倒 贸府
+	///面倒 肺流 眠啊
 }
 
 void CObjMgr::Render(HDC hDC)

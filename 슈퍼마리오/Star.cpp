@@ -1,30 +1,30 @@
 #include "stdafx.h"
-#include "GrowMushroom.h"
+#include "Star.h"
 
 
-CGrowMushroom::CGrowMushroom()
+CStar::CStar()
 	:m_bCreate_Action(true), m_fCreate_Y(0.f), m_bBlock_Coll(false)
 {
 }
 
 
-CGrowMushroom::~CGrowMushroom()
+CStar::~CStar()
 {
 }
 
-void CGrowMushroom::Initialize()
+void CStar::Initialize()
 {
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
 	m_bIsGrounded = true;
-	m_tInfo.fX = 300.f;///일단 임의NUM ->블럭 위치
+	m_tInfo.fX = 350.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
 	m_fCreate_Y = m_tInfo.fY;
 }
 
-int CGrowMushroom::Update()
+int CStar::Update()
 {
 	if (m_bIsDead)
 	{
@@ -70,30 +70,28 @@ int CGrowMushroom::Update()
 	{
 		m_tInfo.fX -= m_fSpeed;
 	}
-////////////////////////////////////////
+	////////////////////////////////////////
 
 	return OBJ_ALIVE;
 }
 
-void CGrowMushroom::LateUpdate()
+void CStar::LateUpdate()
 {
 }
 
-void CGrowMushroom::Render(HDC hDC)
+void CStar::Render(HDC hDC)
 {
 	CObj::UpdateRect();
 
 	HBRUSH myBrush = NULL;
 	HBRUSH oldBrush;
-	myBrush = (HBRUSH)CreateSolidBrush(RGB(250, 100, 0));
+	myBrush = (HBRUSH)CreateSolidBrush(RGB(255, 255, 0));
 	oldBrush = (HBRUSH)SelectObject(hDC, myBrush);
-
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
-
 	SelectObject(hDC, oldBrush);
 	DeleteObject(myBrush);
 }
 
-void CGrowMushroom::Release()
+void CStar::Release()
 {
 }

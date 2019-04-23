@@ -22,9 +22,10 @@
 #define TILE_FCX 50
 #define TILE_FCY 40
 
+#define TILE_BLOCK_FCX 50
+#define TILE_BLOCK_FCY 40
 
 
 /// /// == 이창열추가
 #define ITEM_MOVE_SIZE 50.f
-#define TILE_BLOCK_FCX 50
-#define TILE_BLOCK_FCY 45
+#define BLOCK_SIZE 50.f
