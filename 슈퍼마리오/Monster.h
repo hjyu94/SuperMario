@@ -1,12 +1,11 @@
 #pragma once
-#include "Block.h"
-
-class CTileBlock :
-	public CBlock
+#include "Obj.h"
+class CMonster :
+	public CObj
 {
 public:
-	CTileBlock();
-	virtual ~CTileBlock();
+	CMonster();
+	virtual ~CMonster();
 
 public:
 	// CObj을(를) 통해 상속됨

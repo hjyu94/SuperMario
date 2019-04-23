@@ -5,6 +5,8 @@
 #include "AbstractFactory.h"
 
 #include "Bullet.h"
+#include "Monster.h"
+#include "Block.h"
 
 CPlayer::CPlayer()
 {
@@ -202,6 +204,35 @@ void CPlayer::Render(HDC hDC)
 void CPlayer::Release()
 {
 	
+}
+
+void CPlayer::Collision_Proc(CObj * pCounterObj)
+{
+	RECT rc = {};
+
+	// this(플레이어가)가 몬스터와 부딪히면
+	if (nullptr != dynamic_cast<CMonster*>(pCounterObj))
+	{
+		if(IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if(m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
+	}
+	
+	// 블록과 부딪히면
+	if (nullptr != dynamic_cast<CBlock*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
+	}
 }
 
 CObj * CPlayer::Create_Bullet()

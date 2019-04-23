@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "ObjMgr.h"
 #include "Obj.h"
+#include "CollisionMgr.h"
 
 CObjMgr* CObjMgr::m_pInstance = nullptr;
+CObj* CObjMgr::m_pPlayer = nullptr;
 
 CObjMgr::CObjMgr()
 {
@@ -72,6 +74,9 @@ void CObjMgr::LateUpdate()
 	}
 
 	// 충돌 처리
+	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER], m_Objlist[OBJID::PLAYER]);
+	CCollisionMgr::CollisionRect(m_Objlist[OBJID::BLOCK], m_Objlist[OBJID::PLAYER]);
+	
 }
 
 void CObjMgr::Render(HDC hDC)
@@ -96,4 +101,14 @@ void CObjMgr::Release()
 		}
 		m_Objlist[i].clear();
 	}
+}
+
+CObj* CObjMgr::Get_Player()
+{
+	return m_pPlayer;
+}
+
+void CObjMgr::Set_Player(CObj * _player)
+{
+	m_pPlayer = _player;
 }

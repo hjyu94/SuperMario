@@ -38,5 +38,7 @@ protected:
 	float m_fSpeed;			// 가로 속도
 	float m_fAngle; 
 	bool m_bIsDead;
+
+	DWORD m_Time;
 };
 
