@@ -6,7 +6,6 @@
 #include "LineMgr.h"
 ///Obj
 #include "Player.h"
-#include "NomalBlock.h"
 ///아이템 <-- 추후 블럭에 들어갈것
 #include "Coin.h"
 #include "FireFlower.h"
@@ -15,6 +14,7 @@
 #include "Star.h"
 #include "FlowerMon.h"
 #include "PlantBlock.h"
+#include "BreakBlock.h"
 
 CMainGame::CMainGame()
 {

@@ -38,95 +38,94 @@
     <Filter Include="01. Obj\04. Map">
       <UniqueIdentifier>{608e72c6-9bd8-44e3-bcb4-365e936fbddf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\06. Block">
-      <UniqueIdentifier>{506c5d4a-d20f-415a-9f2b-8c7139aa4bbf}</UniqueIdentifier>
+    <Filter Include="01. Obj\05.Block">
+      <UniqueIdentifier>{11f5e273-710b-4b32-85d9-5eb70a0d7caa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractFactory.h">
-      <Filter>97. Pattern</Filter>
+    <ClInclude Include="슈퍼마리오.h">
+      <Filter>Default</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>96. Manager</Filter>
+    <ClInclude Include="targetver.h">
+      <Filter>Default</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>98. Headers</Filter>
+    <ClInclude Include="stdafx.h">
+      <Filter>Default</Filter>
     </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>98. Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Extern.h">
-      <Filter>98. Headers</Filter>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="MainGame.h">
       <Filter>00. Maingame</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMgr.h">
-      <Filter>96. Manager</Filter>
+    <ClInclude Include="Define.h">
+      <Filter>99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="슈퍼마리오.h">
-      <Filter>99. Default</Filter>
+    <ClInclude Include="Enum.h">
+      <Filter>99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>99. Default</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>99. Default</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>99. Default</Filter>
+    <ClInclude Include="Extern.h">
+      <Filter>99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="Struct.h">
-      <Filter>98. Headers</Filter>
+      <Filter>99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="Typedef.h">
-      <Filter>98. Headers</Filter>
+      <Filter>99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>01. Obj\04 Bullet</Filter>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>98. Pattern</Filter>
     </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>01. Obj\06 Item</Filter>
-    </ClInclude>
-    <ClInclude Include="FireFlower.h">
-      <Filter>01. Obj\01 Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="FlowerMon.h">
-      <Filter>01. Obj\01 Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="GrowMushroom.h">
-      <Filter>01. Obj\01 Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="LifeMushroom.h">
-      <Filter>01. Obj\01 Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster.h">
-      <Filter>01. Obj\01 Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="MonsterBullet.h">
-      <Filter>01. Obj\05 MonsterBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="NomalBlock.h">
-      <Filter>01. Obj\02 Block</Filter>
-    </ClInclude>
-    <ClInclude Include="PlantBlock.h">
-      <Filter>01. Obj\02 Block</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01. Obj\03 Player</Filter>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>97. Manager</Filter>
     </ClInclude>
     <ClInclude Include="Obj.h">
-      <Filter>01. Obj\00 Obj</Filter>
+      <Filter>01. Obj\00. Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01. Obj\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>01. Obj\05. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgr.h">
+      <Filter>97. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeMushroom.h">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="FireFlower.h">
+      <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
     <ClInclude Include="Star.h">
-      <Filter>01. Obj\06 Item</Filter>
+      <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
-    <ClInclude Include="TileBlock.h">
-      <Filter>01. Obj\06. Block</Filter>
+    <ClInclude Include="Coin.h">
+      <Filter>01. Obj\03. Item</Filter>
     </ClInclude>
     <ClInclude Include="GrowMushroom.h">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowerMon.h">
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterBullet.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="PlantBlock.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakBlock.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
+    <ClInclude Include="LineMgr.h" />
+    <ClInclude Include="Line.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -153,14 +152,29 @@
     <ClCompile Include="ObjMgr.cpp">
       <Filter>97. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="TileBlock.cpp">
-      <Filter>01. Obj\06. Block</Filter>
+    <ClCompile Include="LifeMushroom.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="FireFlower.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>01. Obj\03. Item</Filter>
     </ClCompile>
     <ClCompile Include="GrowMushroom.cpp">
+      <Filter>01. Obj\03. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="FlowerMon.cpp">
       <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
-    <ClCompile Include="TileBlock.cpp">
-      <Filter>01. Obj\04. Map</Filter>
+    <ClCompile Include="Monster.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterBullet.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
     <ClCompile Include="PlantBlock.cpp">
       <Filter>01. Obj\05.Block</Filter>
@@ -168,65 +182,29 @@
     <ClCompile Include="BreakBlock.cpp">
       <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClCompile>
+    <ClCompile Include="LineMgr.cpp" />
+    <ClCompile Include="Line.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="슈퍼마리오.ico">
-      <Filter>99. Default</Filter>
-    </Image>
     <Image Include="small.ico">
-      <Filter>99. Default</Filter>
+      <Filter>Default</Filter>
+    </Image>
+    <Image Include="슈퍼마리오.ico">
+      <Filter>Default</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="회의록.txt" />
     <Text Include="ReadMe.txt">
-      <Filter>99. Default</Filter>
+      <Filter>Default</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="00. Maingame">
-      <UniqueIdentifier>{da5f2af9-f5cf-48f6-b6e0-3c265bda8769}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj">
-      <UniqueIdentifier>{5b8e570a-e660-4737-af69-1ee82b19eb4f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="99. Default">
-      <UniqueIdentifier>{c3ebc40f-5cc2-45d3-ae2f-15b8103b6e10}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="98. Headers">
-      <UniqueIdentifier>{5edffc32-81c6-4acb-a4a1-5b390d2620fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="97. Pattern">
-      <UniqueIdentifier>{0f2654c1-379e-4a45-ad49-3c117b859f94}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. Manager">
-      <UniqueIdentifier>{d61d53fe-e814-40ad-b254-bdf39e8e41c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\00 Obj">
-      <UniqueIdentifier>{2bc8687a-8e90-4982-8910-45dd2afbc56c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01 Monster">
-      <UniqueIdentifier>{0f4f8e84-c648-4451-a5b7-082805877930}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\02 Block">
-      <UniqueIdentifier>{ad3a5978-5330-41bd-8099-72ea70f02aea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\03 Player">
-      <UniqueIdentifier>{336a07d8-a1a8-46bf-8084-a8d2f82394fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\04 Bullet">
-      <UniqueIdentifier>{da15154e-0e99-4a97-a435-a0fc6b21adfa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05 MonsterBullet">
-      <UniqueIdentifier>{8f1481e2-3562-41fe-9ebe-71dd86541047}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\06 Item">
-      <UniqueIdentifier>{41e48c85-0c06-4f6f-a643-33097e7fa6f5}</UniqueIdentifier>
-    </Filter>
+    <Text Include="회의록.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="슈퍼마리오.rc">
-      <Filter>99. Default</Filter>
+      <Filter>Default</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

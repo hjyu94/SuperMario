@@ -8,7 +8,8 @@
 #include "Bullet.h"
 #include "Monster.h"
 #include "BreakBlock.h"
-
+#include "MonsterBullet.h"
+#include "Block.h"
 CPlayer::CPlayer()
 {
 }

@@ -4,7 +4,7 @@
 
 CObj::CObj()
 	:m_bIsDead(false)
-	, m_bIsJumping(false)
+	, m_bIsGrounded(false)
 	, m_bInit(false)
 	, m_fAngle(0.f)
 	, m_Vel_Y(0)
@@ -28,7 +28,7 @@ void CObj::UpdateRect()
 
 void CObj::UpdateHeight()
 {
-	if (!m_bIsJumping)
+	if (!m_bIsGrounded)
 	{
 		m_Vel_Y += 1.f;
 		m_tInfo.fY += m_Vel_Y;

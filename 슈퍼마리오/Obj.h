@@ -33,7 +33,7 @@ protected:
 	RECT m_tRect; 
 	
 	float m_Vel_Y;			// 중력방향 속도
-	bool m_bIsJumping;
+	bool m_bIsGrounded;
 
 	float m_fSpeed;			// 가로 속도
 	float m_fAngle; 
@@ -41,5 +41,6 @@ protected:
 
 	DWORD m_Time;
 	bool m_bInit;
+
 };
 
