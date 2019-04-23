@@ -21,3 +21,7 @@
 
 #define TILE_BLOCK_FCX 50
 #define TILE_BLOCK_FCY 45
+
+#define FLOWER_MON_FCX 100
+#define FLOWER_MON_FCY 180
+
