@@ -172,7 +172,6 @@ void CPlayer::Render(HDC hDC)
 		myBrush = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
 		break;
 	}
-
 	oldBrush = (HBRUSH)SelectObject(hDC, myBrush);
 
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
