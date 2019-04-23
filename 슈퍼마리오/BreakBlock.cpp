@@ -44,12 +44,6 @@ int CBreakBlock::Update()
 		return OBJ_DEAD;
 	}
 
-		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CCoin>());
-		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CFireFlower>());
-		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
-		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CLifeMushroom>());
-		//CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CStar>());
-
 	return OBJ_ALIVE;
 }
 
