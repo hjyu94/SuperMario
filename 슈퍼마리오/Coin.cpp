@@ -3,7 +3,6 @@
 
 
 CCoin::CCoin()
-	:m_bCreate_Action(true), m_fCreate_Y(0.f)
 {
 }
 
@@ -16,15 +15,16 @@ void CCoin::Initialize()
 {
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 40.f;
-	m_fSpeed = 15.f;
+	m_fSpeed = 11.f;
 
 	m_tInfo.fX = 300.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
-	m_bIsGrounded = true;
-
 	m_fCreate_Y = m_tInfo.fY;
+
+	m_bIsGrounded = false;
 	m_bIsDead = false;
+	m_bCreate_Action = true;
 }
 
 int CCoin::Update()
@@ -34,19 +34,22 @@ int CCoin::Update()
 		return OBJ_DEAD;
 	}
 
-	///생성 액션
-	if (m_bCreate_Action && m_bIsGrounded)
+	if (m_bCreate_Action)
 	{
 		m_tInfo.fY -= m_fSpeed;
-
-		if (m_tInfo.fY <= m_fCreate_Y - (ITEM_MOVE_SIZE+50))
+		if ((m_fCreate_Y - 100.f) >= m_tInfo.fY)
 		{
-			m_tInfo.fY += m_fSpeed;
+			m_bCreate_Action = false;
 		}
 	}
-
-
-	////////////////////////////////////////
+	if (!m_bCreate_Action)
+	{
+		m_tInfo.fY += m_fSpeed;
+		if (m_fCreate_Y <= m_tInfo.fY)
+		{
+			return OBJ_DEAD;
+		}
+	}
 
 	return OBJ_ALIVE;
 }

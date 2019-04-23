@@ -18,7 +18,7 @@ void CGrowMushroom::Initialize()
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
 	m_bIsGrounded = true;
-	m_tInfo.fX = 300.f;///일단 임의NUM ->블럭 위치
+	m_tInfo.fX = 250.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
 	m_fCreate_Y = m_tInfo.fY;
@@ -52,7 +52,7 @@ int CGrowMushroom::Update()
 	{
 		m_Vel_Y += 0.4f;
 		m_tInfo.fY += m_Vel_Y;
-		if (m_tInfo.fX >= 425.f)
+		if (m_tInfo.fX >= 425.f) //부딪혔을때
 		{
 			m_bIsGrounded = false;
 		}

@@ -32,19 +32,14 @@ void CMainGame::Initialize()
 
 	///객체 생성
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create());
+	
 
 	//1) 플레이어
 	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, pPlayer);
 	CObjMgr::Get_Instance()->Set_Player((CPlayer*)pPlayer);
 	
-	//2) 아이템<-- 추후 블럭에 들어갈것
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CCoin>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CFireFlower>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CLifeMushroom>::Create());
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CStar>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::OBjBLOCK, CAbstractFactory<CBreakBlock>::Create());
 
 	//3) 몬스터
 	CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, WINCY - PLANT_BLOCK_FCY / 2 - 100);

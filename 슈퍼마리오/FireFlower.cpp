@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "FireFlower.h"
-
+#include "BreakBlock.h"
 
 CFireFlower::CFireFlower()
 	:m_bCreate_Action(true), m_fCreate_Y(0.f)
 {
+ 
 }
 
 
@@ -14,11 +15,12 @@ CFireFlower::~CFireFlower()
 
 void CFireFlower::Initialize()
 {
-	m_tInfo.fCX = 30.f;
+	m_tInfo.fCX = 20.f;
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
 	m_bIsGrounded = true;
-	m_tInfo.fX = 400.f;///일단 임의NUM ->블럭 위치
+
+	m_tInfo.fX = 250.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
 	m_fCreate_Y = m_tInfo.fY;

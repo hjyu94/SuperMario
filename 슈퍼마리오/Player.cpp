@@ -242,7 +242,7 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 		}
 	}
 
-	// 플레이어가 몬스터 총알과 부딪히면
+	// 플레이어가 몬스터 총알과 충돌할 경우
 	if (nullptr != dynamic_cast<CMonsterBullet*>(pCounterObj))
 	{
 		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
@@ -251,7 +251,7 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 		}
 	}
 
-	// 블록과 부딪히면
+	// 플레이어가 화분과 충돌할 경우
 	if (nullptr != dynamic_cast<CBlock*>(pCounterObj))
 	{
 		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
@@ -263,7 +263,7 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 		}
 	}
  
-	// 플레이어가 크면 부숴지는 블록 충돌
+	// 플레이어가 클때 부숴지는 블록에 충돌할 경우
 	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))
 	{
 		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
