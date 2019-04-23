@@ -8,7 +8,8 @@
 #include "Bullet.h"
 #include "Monster.h"
 #include "Block.h"
-#include "MonsterBullet.h"
+#include "BreakBlock.h"
+
 CPlayer::CPlayer()
 {
 }
@@ -45,11 +46,8 @@ int CPlayer::Update()
 		return 0;
 	}
 
-	float fy = 0.f;
-	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, &fy);
-	
 	// 자유낙하
-	if (!m_bIsJumping)
+	if (!m_bIsGrounded)
 	{
 		m_Vel_Y += 0.4f;
 		m_tInfo.fY += m_Vel_Y;
@@ -66,16 +64,14 @@ int CPlayer::Update()
 
 	if (m_tInfo.fY >= WINCY - 100 - m_tInfo.fCY / 2)
 	{
-		m_bIsJumping = true;
+		m_bIsGrounded = true;
 	}
 
-
-
 	// 키 입력
-	if (GetAsyncKeyState(VK_SPACE) && m_bIsJumping)
+	if (GetAsyncKeyState(VK_SPACE) && m_bIsGrounded)
 	{
 		m_Vel_Y = -12.f;
-		m_bIsJumping = false;
+		m_bIsGrounded = false;
 	}
 
 	if (GetAsyncKeyState(VK_LEFT))
@@ -260,6 +256,24 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 	{
 		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
 		{
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
+	}
+ 
+	// 플레이어가 크면 부숴지는 블록 충돌
+	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if (CObjMgr::Get_Instance()->Get_Player()->m_eCurState != PLAYER::PS_IDLE)
+			{
+				// 큰 상태
+			}
+
+
 			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
 				m_tInfo.fX -= rc.right - rc.left;
 			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면

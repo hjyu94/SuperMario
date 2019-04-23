@@ -1,11 +1,11 @@
 #pragma once
 #include "Obj.h"
-class CNomalBlock :
+class CBreakBlock :
 	public CObj
 {
 public:
-	CNomalBlock();
-	~CNomalBlock();
+	CBreakBlock();
+	~CBreakBlock();
 public:
 	// CObj을(를) 통해 상속됨
 	virtual void Initialize() override;

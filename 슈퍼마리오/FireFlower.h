@@ -16,7 +16,4 @@ public:
 private:
 	float m_fCreate_Y;
 	bool  m_bCreate_Action;
-	float m_fTime;
-	float m_fPower;
-
 };
