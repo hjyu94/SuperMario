@@ -6,7 +6,6 @@
 
 #include "Bullet.h"
 #include "Monster.h"
-#include "Block.h"
 #include "BreakBlock.h"
 
 CPlayer::CPlayer()
@@ -241,17 +240,6 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 		}
 	}
 	
-	// 블록과 부딪히면
-	if (nullptr != dynamic_cast<CBlock*>(pCounterObj))
-	{
-		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
-		{
-			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
-				m_tInfo.fX -= rc.right - rc.left;
-			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
-				m_tInfo.fX += rc.right - rc.left;
-		}
-	}
  
 	// 플레이어가 크면 부숴지는 블록 충돌
 	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))

@@ -115,9 +115,6 @@
     <ClInclude Include="MonsterBullet.h">
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>01. Obj\05.Block</Filter>
-    </ClInclude>
     <ClInclude Include="TileBlock.h">
       <Filter>01. Obj\04. Map</Filter>
     </ClInclude>
@@ -176,9 +173,6 @@
     </ClCompile>
     <ClCompile Include="MonsterBullet.cpp">
       <Filter>01. Obj\02. Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
     <ClCompile Include="TileBlock.cpp">
       <Filter>01. Obj\04. Map</Filter>

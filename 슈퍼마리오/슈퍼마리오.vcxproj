@@ -147,7 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
-    <ClInclude Include="Block.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Coin.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -184,7 +183,6 @@
     <ClInclude Include="슈퍼마리오.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Coin.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
