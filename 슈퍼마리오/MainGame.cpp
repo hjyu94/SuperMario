@@ -6,6 +6,7 @@
 #include "ObjMgr.h"
 
 #include "Player.h"
+#include "GrowMushroom.h"
 
 CMainGame::CMainGame()
 {
@@ -20,7 +21,9 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
+	///°´Ã¼ »ý¼º
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
 }
 
 void CMainGame::Update()

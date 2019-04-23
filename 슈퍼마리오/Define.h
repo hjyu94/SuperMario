@@ -21,3 +21,8 @@
 
 #define TILE_FCX 50
 #define TILE_FCY 40
+
+
+
+/// /// == 이창열추가
+#define ITEM_MOVE_SIZE 50.f
