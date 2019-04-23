@@ -44,6 +44,7 @@ int CBreakBlock::Update()
 		//Á×¾úÀ»¶§ 
 		return OBJ_DEAD;
 	}
+
 	return OBJ_ALIVE;
 }
 
@@ -94,12 +95,4 @@ void CBreakBlock::CreateGrowMush()
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CGrowMushroom>());
 }
 
-void CBreakBlock::CreateLifeMush()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CLifeMushroom>());
-}
 
-void CBreakBlock::CreateStar()
-{
-	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CreateItem<CStar>());
-}
