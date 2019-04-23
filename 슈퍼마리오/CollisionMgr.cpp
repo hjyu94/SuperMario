@@ -19,11 +19,11 @@ void CCollisionMgr::CollisionRect(OBJLIST & DestList, OBJLIST & SourList)
 	{
 		for (auto& pSrc : SourList)
 		{
-			if (IntersectRect(&rc,&pDst->Get_Rect(), &pSrc->Get_Rect()))
+			if (IntersectRect(&rc, &pDst->Get_Rect(), &pSrc->Get_Rect()))
 			{
 				// Ãæµ¹ 
-				pDst->CObj::Collision_Proc(pSrc);
-				pSrc->CObj::Collision_Proc(pDst);
+				pDst->Collision_Proc(pSrc);
+				pSrc->Collision_Proc(pDst);
 			}
 		}
 	}

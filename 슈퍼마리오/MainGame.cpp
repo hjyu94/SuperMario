@@ -14,6 +14,9 @@
 #include "GrowMushroom.h"
 #include "LifeMushroom.h"
 #include "Star.h"
+#include "TileBlock.h"
+#include "FlowerMon.h"
+#include "PlantBlock.h"
 
 CMainGame::CMainGame()
 {
@@ -28,6 +31,7 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
+
 	///객체 생성
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CNomalBlock>::Create());
@@ -35,7 +39,23 @@ void CMainGame::Initialize()
 	///아이템 생성 <-- 추후 블럭에 들어갈것
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CCoin>::Create());
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CFireFlower>::Create());
+	//1) 플레이어
+	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();
+	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, pPlayer);
+	CObjMgr::Get_Instance()->Set_Player(pPlayer);
+	
+	//2) 아이템
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
+
+	//3) 몬스터
+	CPlantBlock* pPlant = CAbstractFactory<CPlantBlock>::Create(500, 500);
+	CFlowerMon* pFlowerMon = CAbstractFactory<CFlowerMon>::Create(500, 500);
+	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, pFlowerMon);
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant);
+
+	CPlantBlock* pPlant2 = CAbstractFactory<CPlantBlock>::Create(300, 500);
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant2);
+
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CLifeMushroom>::Create());
 	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CStar>::Create());
 }

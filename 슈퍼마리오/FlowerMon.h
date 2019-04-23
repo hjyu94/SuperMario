@@ -1,11 +1,14 @@
 #pragma once
-#include "Obj.h"
-class CPlayer :
-	public CObj
+#include "Monster.h"
+
+class CPlantBlock;
+
+class CFlowerMon :
+	public CMonster
 {
 public:
-	CPlayer();
-	virtual ~CPlayer();
+	CFlowerMon();
+	virtual ~CFlowerMon();
 
 public:
 	// CObj을(를) 통해 상속됨
@@ -14,14 +17,16 @@ public:
 	virtual void LateUpdate() override;
 	virtual void Render(HDC hDC) override;
 	virtual void Release() override;
-	virtual void Collision_Proc(CObj* pCounterObj);
 	
 public:
-	CObj* Create_Bullet();
 
-public:
-	// m_fAngle: 진행 방향
-	PLAYER::STATE m_eCurState;
-	PLAYER::STATE m_ePrevState;
+private:
+	float m_fCenter_x;
+	float m_fCenter_y;
+	bool m_bInit;
+	bool m_isStop;
+
+	DWORD BulletCoolTime;
+	CObj* m_pTarget;
 };
 

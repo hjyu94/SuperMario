@@ -1,12 +1,12 @@
 #pragma once
 #include "Block.h"
 
-class CTileBlock :
-	public CBlock
+class CPlantBlock
+	: public CBlock
 {
 public:
-	CTileBlock();
-	virtual ~CTileBlock();
+	CPlantBlock();
+	virtual ~CPlantBlock();
 
 public:
 	// CObj을(를) 통해 상속됨
@@ -15,5 +15,7 @@ public:
 	virtual void LateUpdate() override;
 	virtual void Render(HDC hDC) override;
 	virtual void Release() override;
+
+private:
 };
 
