@@ -24,7 +24,7 @@ CoinBox				ㅁ 계속 동전이 나옴. 안 깨짐. 올라타기 가능.
 MultiItemBox		ㅁ ? 네모, 여러번 네모가 아이템을 다 뱉으면 변하는 네모
 ItemBox				? 네모 : 한번 머리를 박으면 아이템 나옴
 Plant, MonsPlant	초록색 화분(2종류, 하나는 꽃 몬스터가 나옴)
-이름이 뭐가 있죠??		y 축으로 움직이는 발판
+y축발판		        y 축으로 움직이는 발판
 Flag				깃발(플레이어가 쭉 타고 내려옴)
 Portal				포탈(다음 스테이지로 이동하게 함)
 Tile				바닥
@@ -41,6 +41,8 @@ Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 
 // 
 총알도 만들어야 함
+
+
 
 // 깃헙 쓰는 법
 - Collaborator 에 추가하기

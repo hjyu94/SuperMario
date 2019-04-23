@@ -38,6 +38,9 @@
     <Filter Include="01. Obj\04. Map">
       <UniqueIdentifier>{608e72c6-9bd8-44e3-bcb4-365e936fbddf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\05.Block">
+      <UniqueIdentifier>{11f5e273-710b-4b32-85d9-5eb70a0d7caa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="슈퍼마리오.h">
@@ -91,9 +94,6 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>97. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="LineMgr.h">
-      <Filter>97. Manager</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -121,9 +121,6 @@
       <Filter>01. Obj\05. Bullet</Filter>
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
-      <Filter>97. Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="LineMgr.cpp">
       <Filter>97. Manager</Filter>
     </ClCompile>
   </ItemGroup>

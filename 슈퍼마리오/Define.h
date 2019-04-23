@@ -3,7 +3,7 @@
 #define WINCX 800
 #define WINCY 600
 
-#define OBJ_NOEVENT 0
+#define OBJ_ALIVE 0 
 #define OBJ_DEAD 1
 #define OBJ_COLLISION 2
 
