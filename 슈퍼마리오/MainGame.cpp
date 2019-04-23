@@ -6,6 +6,7 @@
 #include "ObjMgr.h"
 
 #include "Player.h"
+#include "TileBlock.h"
 
 CMainGame::CMainGame()
 {
