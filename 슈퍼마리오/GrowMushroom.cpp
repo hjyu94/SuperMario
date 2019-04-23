@@ -3,7 +3,7 @@
 
 
 CGrowMushroom::CGrowMushroom()
-	:m_bCreate_Action(true), m_fCreate_Y(0.f), m_bBlock_Coll(false)
+	:m_bCreate_Action(0)
 {
 }
 
@@ -17,10 +17,11 @@ void CGrowMushroom::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
-	m_bIsGrounded = true;
+	m_bIsGrounded = false;
 	m_tInfo.fX = 250.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
+	m_fCreate_X = m_tInfo.fX;
 	m_fCreate_Y = m_tInfo.fY;
 }
 
@@ -34,43 +35,38 @@ int CGrowMushroom::Update()
 	}
 
 	///생성 액션 체크
-	if (m_bIsGrounded && m_bCreate_Action && !m_bBlock_Coll)
+	if (0 == m_bCreate_Action)
 	{
+		//올라가기
 		m_tInfo.fY -= (m_fSpeed - 3.f);
+
 		if (m_tInfo.fY <= m_fCreate_Y - ITEM_MOVE_SIZE)
 		{
-			m_bCreate_Action = false;
+			m_bCreate_Action = 1;
 		}
 	}
-	if (m_bIsGrounded && !m_bCreate_Action && !m_bBlock_Coll)
+	if (1 == m_bCreate_Action)
+	{
+			//옆으로
+			m_tInfo.fX += m_fSpeed;
+			m_tInfo.fY += m_fSpeed;
+			if (m_tInfo.fY >= 515.f)
+			{
+				m_bCreate_Action = 2;
+			}
+	}
+	if (2 == m_bCreate_Action)
 	{
 		m_tInfo.fX += m_fSpeed;
-	}
-	///////////////////////////////////////////////////////////
-	//자유낙하
-	if (m_bIsGrounded && !m_bCreate_Action && !m_bBlock_Coll)
-	{
-		m_Vel_Y += 0.4f;
-		m_tInfo.fY += m_Vel_Y;
-		if (m_tInfo.fX >= 425.f) //부딪혔을때
+		if (m_tInfo.fX >= WINCX)
 		{
-			m_bIsGrounded = false;
+			m_bCreate_Action = 3;
 		}
 	}
-	//블럭충돌 체크
-	if (!m_bCreate_Action && !m_bIsGrounded && !m_bBlock_Coll)
-	{
-		m_tInfo.fX += m_fSpeed;
-		if (m_tInfo.fX >= WINCX)///임시
-		{
-			m_bBlock_Coll = true;
-		}
-	}
-	if (!m_bCreate_Action && !m_bIsGrounded && m_bBlock_Coll)
+	if (3 == m_bCreate_Action)
 	{
 		m_tInfo.fX -= m_fSpeed;
 	}
-////////////////////////////////////////
 
 	return OBJ_ALIVE;
 }
