@@ -1,3 +1,4 @@
+//커밋테스트입니다 4:16
 #include "stdafx.h"
 #include "MainGame.h"
 
@@ -6,6 +7,7 @@
 #include "ObjMgr.h"
 
 #include "Player.h"
+#include "GrowMushroom.h"
 #include "TileBlock.h"
 
 CMainGame::CMainGame()
@@ -21,7 +23,9 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
+	///객체 생성
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CGrowMushroom>::Create());
 }
 
 void CMainGame::Update()

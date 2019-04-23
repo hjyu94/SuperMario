@@ -95,9 +95,6 @@
       <Filter>01. Obj\06. Block</Filter>
     </ClInclude>
     <ClInclude Include="GrowMushroom.h">
-      <Filter>01. Obj\03. Item</Filter>
-    </ClInclude>
-    <ClInclude Include="FlowerMon.h">
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
   </ItemGroup>
@@ -130,9 +127,6 @@
       <Filter>01. Obj\06. Block</Filter>
     </ClCompile>
     <ClCompile Include="GrowMushroom.cpp">
-      <Filter>01. Obj\03. Item</Filter>
-    </ClCompile>
-    <ClCompile Include="FlowerMon.cpp">
       <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
   </ItemGroup>
