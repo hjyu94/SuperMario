@@ -1,5 +1,8 @@
 // push test
 /// 같은작업 testtttttt
+
+// 효정: 같은 작업 테스트 2
+
 #include "stdafx.h"
 #include "MainGame.h"
 
