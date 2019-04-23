@@ -1,14 +1,12 @@
 #pragma once
-#include "Block.h"
-
-class CTileBlock :
-	public CBlock
+#include "Obj.h"
+class CBlock :
+	public CObj
 {
 public:
-	CTileBlock();
-	virtual ~CTileBlock();
+	CBlock();
+	virtual ~CBlock();
 
-public:
 	// CObj을(를) 통해 상속됨
 	virtual void Initialize() override;
 	virtual int Update() override;

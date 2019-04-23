@@ -17,7 +17,7 @@ void CFireFlower::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 40.f;
 	m_fSpeed = 5.f;
-	m_bIsGrounded = true;
+	m_bIsJumping = true;
 	m_tInfo.fX = 400.f;///일단 임의NUM ->블럭 위치
 	m_tInfo.fY = 400.f;///일단 임의NUM ->블럭 위치
 
@@ -34,7 +34,7 @@ int CFireFlower::Update()
 	}
 
 	///생성 액션
-	if (m_bCreate_Action && m_bIsGrounded)
+	if (m_bCreate_Action && m_bIsJumping)
 	{
 		m_tInfo.fY -= (m_fSpeed - 3.f);
 		if (m_tInfo.fY <= m_fCreate_Y - ITEM_MOVE_SIZE)
@@ -42,7 +42,7 @@ int CFireFlower::Update()
 			m_bCreate_Action = false;
 		}
 	}
-	if (!m_bCreate_Action && m_bIsGrounded)
+	if (!m_bCreate_Action && m_bIsJumping)
 	{
 	}
 

@@ -160,9 +160,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GrowMushroom.h" />
-    <ClInclude Include="LifeMushroom.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="LifeMushroom.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterBullet.h" />
@@ -178,7 +176,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TileBlock.h" />
     <ClInclude Include="Typedef.h" />
     <ClInclude Include="슈퍼마리오.h" />
   </ItemGroup>
@@ -193,9 +190,7 @@
     </ClCompile>
     <ClCompile Include="FlowerMon.cpp" />
     <ClCompile Include="GrowMushroom.cpp" />
-    <ClCompile Include="LifeMushroom.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="LifeMushroom.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="BreakBlock.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -213,7 +208,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TileBlock.cpp" />
     <ClCompile Include="슈퍼마리오.cpp" />
   </ItemGroup>
   <ItemGroup>

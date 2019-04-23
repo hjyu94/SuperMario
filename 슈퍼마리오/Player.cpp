@@ -3,6 +3,7 @@
 
 #include "ObjMgr.h"
 #include "AbstractFactory.h"
+#include "LineMgr.h"
 
 #include "Bullet.h"
 #include "Monster.h"
@@ -211,11 +212,11 @@ void CPlayer::Render(HDC hDC)
 	SelectObject(hDC, oldBrush);
 	DeleteObject(myBrush);
 	
-	// 맵
-	MoveToEx(hDC, 0, WINCY - 100, NULL);
-	LineTo(hDC, WINCX, WINCY - 100);
 
-	Rectangle(hDC, 100, WINCY - 200, 150, WINCY - 250);
+	// 상태값 표시
+	WCHAR lpOut[1024] = L"";
+	wsprintf(lpOut, L"Life: %d", m_iLife);
+	TextOut(hDC, 100, 100, lpOut, lstrlen(lpOut));
 }
 
 void CPlayer::Release()
@@ -239,7 +240,27 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 			--m_iLife;
 		}
 	}
-	
+
+	// 플레이어가 몬스터 총알과 부딪히면
+	if (nullptr != dynamic_cast<CMonsterBullet*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			--m_iLife;
+		}
+	}
+
+	// 블록과 부딪히면
+	if (nullptr != dynamic_cast<CBlock*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
+	}
  
 	// 플레이어가 크면 부숴지는 블록 충돌
 	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))

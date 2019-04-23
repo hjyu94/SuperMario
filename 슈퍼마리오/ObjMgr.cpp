@@ -80,6 +80,8 @@ void CObjMgr::LateUpdate()
 
 	CCollisionMgr::EatItem(m_Objlist[OBJID::ITEM], m_Objlist[OBJID::PLAYER]);
 	
+	CCollisionMgr::CollisionRect(m_Objlist[OBJID::MONSTER_BULLET], m_Objlist[OBJID::PLAYER]);
+	
 }
 
 void CObjMgr::Render(HDC hDC)
