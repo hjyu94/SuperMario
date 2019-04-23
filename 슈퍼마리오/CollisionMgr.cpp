@@ -46,7 +46,6 @@ void CCollisionMgr::CollisionSphere(OBJLIST & DestList, OBJLIST & SourList)
 
 bool CCollisionMgr::CheckSphere(CObj * pDest, CObj * pSour)
 {
-
 	// 반지름의 합 구하기. 
 	float fRadiusSum = (pDest->Get_Info().fCX * 0.5f) + (pSour->Get_Info().fCX * 0.5f);
 	// 밑변과 높이 구하기. 
