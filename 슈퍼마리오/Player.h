@@ -16,6 +16,9 @@ public:
 	virtual void Release() override;
 
 public:
+	CObj* Create_Bullet();
+
+public:
 	// m_fAngle: 진행 방향
 	PLAYER::STATE m_eCurState;
 	PLAYER::STATE m_ePrevState;

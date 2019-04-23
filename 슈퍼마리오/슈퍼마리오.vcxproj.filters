@@ -91,6 +91,9 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>97. Manager</Filter>
     </ClInclude>
+    <ClInclude Include="LineMgr.h">
+      <Filter>97. Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -118,6 +121,9 @@
       <Filter>01. Obj\05. Bullet</Filter>
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
+      <Filter>97. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="LineMgr.cpp">
       <Filter>97. Manager</Filter>
     </ClCompile>
   </ItemGroup>

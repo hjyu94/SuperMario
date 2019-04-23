@@ -25,6 +25,8 @@ public:
 	void Set_Angle(float _angle);
 	void Set_Dead();
 
+public:
+	virtual void Collision_Proc(CObj* pCounterObj);
 	
 protected:
 	INFO m_tInfo; 

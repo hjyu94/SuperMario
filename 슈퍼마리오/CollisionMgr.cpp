@@ -22,6 +22,8 @@ void CCollisionMgr::CollisionRect(OBJLIST & DestList, OBJLIST & SourList)
 			if (IntersectRect(&rc,&pDst->Get_Rect(), &pSrc->Get_Rect()))
 			{
 				// Ãæµ¹ 
+				pDst->CObj::Collision_Proc(pSrc);
+				pSrc->CObj::Collision_Proc(pDst);
 			}
 		}
 	}

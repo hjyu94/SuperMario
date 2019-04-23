@@ -60,19 +60,32 @@ int CPlayer::Update()
 
 	if (GetAsyncKeyState(VK_LEFT))
 	{
+		// IDLE: 원래 스피드
+		// 무적: 원래 스피드 * 1.2
+		// 달리기: 원래 스피드 * 1.2
+		// 무적일때 달리기: 원래 스피드 * 1.2 * 1.2
+		// 적용 아직 제대로 안됨.
+
 		m_fAngle = 180;
+
+		float Speed = m_fSpeed;
+
+		if (m_eCurState == PLAYER::PS_POWERFUL)
+		{
+			Speed *= 1.2f;
+		}
 
 		if (GetAsyncKeyState(VK_SHIFT))
 		{
-			m_tInfo.fX -= m_fSpeed * 1.2;
+			m_tInfo.fX -= Speed * 1.2;
 			m_ePrevState = m_eCurState;
 			m_eCurState = PLAYER::PS_RUNNING;
 		}
 		else
 		{
-			m_tInfo.fX -= m_fSpeed;
+			m_tInfo.fX -= Speed;
 			m_ePrevState = m_eCurState;
-			m_eCurState = PLAYER::PS_IDLE;
+			//m_eCurState = PLAYER::PS_IDLE;
 		}
 	}
 
@@ -90,14 +103,13 @@ int CPlayer::Update()
 		{
 			m_tInfo.fX += m_fSpeed;
 			m_ePrevState = m_eCurState;
-			m_eCurState = PLAYER::PS_IDLE;
+			//m_eCurState = PLAYER::PS_IDLE;
 		}
 	}
 
-	if (GetAsyncKeyState('Z')) // 총알 발사
+	if ((GetAsyncKeyState('Z') & 0001) && m_eCurState == PLAYER::PS_ANGRY) // 총알 발사
 	{
-		//CBullet* pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tInfo.fY, m_fAngle+45);
-		//CObjMgr::Get_Instance()->AddObject(OBJID::BULLET, );
+		CObjMgr::Get_Instance()->AddObject(OBJID::BULLET, Create_Bullet());
 	}
 
 	// 치트키, 상태에 따라서 플레이어 색 변함
@@ -140,6 +152,7 @@ int CPlayer::Update()
 			}
 		}
 	}
+
 
 	CObj::UpdateRect();
 	return 0;
@@ -190,4 +203,18 @@ void CPlayer::Render(HDC hDC)
 void CPlayer::Release()
 {
 	
+}
+
+CObj * CPlayer::Create_Bullet()
+{
+	CBullet* pBullet = nullptr;
+
+	if (m_fAngle == 0) // 오른쪽을 보고 있다면		{
+		pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tRect.top, 30);
+	else if (m_fAngle == 180) // 왼쪽을 보고 있다면
+		pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tRect.top, 150);
+
+	// 플레이어가 작을 때, 클 때 총알 튀는 폭이 다른가..?
+
+	return pBullet;
 }
