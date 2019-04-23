@@ -226,7 +226,14 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 	// this(플레이어가)가 몬스터와 부딪히면
 	if (nullptr != dynamic_cast<CMonster*>(pCounterObj))
 	{
-		--m_iLife;
+		if(IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if(m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+			--m_iLife;
+		}
 	}
 
 	// 플레이어가 몬스터 총알과 충돌할 경우
@@ -237,7 +244,32 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 
 	if (nullptr != dynamic_cast<CFireFlower*>(pCounterObj))
 	{
-		m_eState = PLAYER::STATE::PS_ANGRY;
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
+	}
+ 
+	// 플레이어가 클때 부숴지는 블록에 충돌할 경우
+	if (nullptr != dynamic_cast<CBreakBlock*>(pCounterObj))
+	{
+		if (IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
+		{
+			if (CObjMgr::Get_Instance()->Get_Player()->m_eCurState != PLAYER::PS_IDLE)
+			{
+				// 큰 상태
+			}
+			
+			CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, ((CBreakBlock*)pCounterObj)->CreateItem<CStar>());
+			
+			if (m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
+				m_tInfo.fX -= rc.right - rc.left;
+			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
+				m_tInfo.fX += rc.right - rc.left;
+		}
 	}
 }
 
