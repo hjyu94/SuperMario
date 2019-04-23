@@ -1,7 +1,5 @@
 // push test
 
-// 같은 작업을 해서 둘다 푸쉬한 경우???
-
 #include "stdafx.h"
 #include "MainGame.h"
 
