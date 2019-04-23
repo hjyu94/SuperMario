@@ -53,3 +53,7 @@ void CObj::Set_Dead()
 {
 	m_bIsDead = true;
 }
+
+void CObj::Collision_Proc(CObj * pCounterObj)
+{
+}
