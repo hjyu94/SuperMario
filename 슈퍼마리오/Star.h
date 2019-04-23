@@ -1,11 +1,11 @@
 #pragma once
 #include "Obj.h"
-class CGrowMushroom :
+class CStar :
 	public CObj
 {
 public:
-	CGrowMushroom();
-	~CGrowMushroom();
+	CStar();
+	~CStar();
 public:
 	// CObj을(를) 통해 상속됨
 	virtual void Initialize() override;
@@ -19,6 +19,7 @@ private:
 	float m_fCreate_Y;
 	float m_fTime;
 	float m_fPower;
+	
+	float m_fTwingle;
 
 };
-

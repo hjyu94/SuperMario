@@ -1,13 +1,19 @@
 //커밋테스트입니다 4:16
 #include "stdafx.h"
 #include "MainGame.h"
-
 #include "AbstractFactory.h"
 #include "CollisionMgr.h"
 #include "ObjMgr.h"
-
+///Obj
 #include "Player.h"
+#include "TileBlock.h"
+#include "NomalBlock.h"
+///아이템 <-- 추후 블럭에 들어갈것
+#include "Coin.h"
+#include "FireFlower.h"
 #include "GrowMushroom.h"
+#include "LifeMushroom.h"
+#include "Star.h"
 #include "TileBlock.h"
 #include "FlowerMon.h"
 #include "PlantBlock.h"
@@ -27,6 +33,12 @@ void CMainGame::Initialize()
 	m_hDC = GetDC(g_hWnd);
 
 	///객체 생성
+	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, CAbstractFactory<CPlayer>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CNomalBlock>::Create());
+
+	///아이템 생성 <-- 추후 블럭에 들어갈것
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CCoin>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CFireFlower>::Create());
 	//1) 플레이어
 	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();
 	CObjMgr::Get_Instance()->AddObject(OBJID::PLAYER, pPlayer);
@@ -44,6 +56,8 @@ void CMainGame::Initialize()
 	//4) 벽, Obj, 타일 ????
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(300, WINCY-PLANT_BLOCK_FCY/2-100));
 
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CLifeMushroom>::Create());
+	CObjMgr::Get_Instance()->AddObject(OBJID::ITEM, CAbstractFactory<CStar>::Create());
 }
 
 void CMainGame::Update()

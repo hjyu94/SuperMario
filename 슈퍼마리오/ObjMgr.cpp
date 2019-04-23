@@ -3,6 +3,7 @@
 #include "Obj.h"
 #include "CollisionMgr.h"
 
+#include "CollisionMgr.h"
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 CPlayer* CObjMgr::m_pPlayer = nullptr;
 
