@@ -161,6 +161,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GrowMushroom.h" />
+    <ClInclude Include="ItemBlock.h" />
     <ClInclude Include="LifeMushroom.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="LineMgr.h" />
@@ -196,6 +197,7 @@
     </ClCompile>
     <ClCompile Include="FlowerMon.cpp" />
     <ClCompile Include="GrowMushroom.cpp" />
+    <ClCompile Include="ItemBlock.cpp" />
     <ClCompile Include="LifeMushroom.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="LineMgr.cpp" />

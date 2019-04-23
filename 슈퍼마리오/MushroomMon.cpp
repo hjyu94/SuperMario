@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MushroomMon.h"
-
+#include "Player.h"
 
 CMushroomMon::CMushroomMon()
 {
@@ -20,7 +20,9 @@ void CMushroomMon::Initialize()
 
 int CMushroomMon::Update()
 {
-	
+	if (m_bIsDead)
+		return OBJ_DEAD;
+
 	float fy = 0.f;
 	bool bIsColl = CLineMgr::Get_Instance()->LineCollision(m_tInfo.fX, m_tInfo.fY, &fy);
 	
@@ -70,6 +72,14 @@ void CMushroomMon::Collision_Proc(CObj * pCounterObj)
 		if (fIntersectedX < fIntersectedY)
 		{
 			m_fSpeed *= -1;
+		}
+
+		if (dynamic_cast<CPlayer*>(pCounterObj) != nullptr)
+		{
+			if (fIntersectedX > fIntersectedY)
+			{
+				m_bIsDead = true;
+			}
 		}
 	}
 }

@@ -230,11 +230,10 @@ void CPlayer::Collision_Proc(CObj * pCounterObj)
 	{
 		if(IntersectRect(&rc, &m_tRect, &pCounterObj->Get_Rect()))
 		{
-			if(m_tInfo.fX < pCounterObj->Get_Info().fX) // 플레이어가 왼쪽에서 다가가면
-				m_tInfo.fX -= rc.right - rc.left;
-			if (m_tInfo.fX > pCounterObj->Get_Info().fX) // 플레이어가 오른쪽에서 다가가면
-				m_tInfo.fX += rc.right - rc.left;
-			--m_iLife;
+			if(m_tRect.bottom >= pCounterObj->Get_Rect().top)
+			{ }
+			else
+				--m_iLife;
 		}
 	}
 

@@ -16,6 +16,7 @@
 #include "PlantBlock.h"
 #include "BreakBlock.h"
 #include "MushroomMon.h"
+#include "ItemBlock.h"
 
 CMainGame::CMainGame()
 {
@@ -49,15 +50,15 @@ void CMainGame::Initialize()
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, pPlant);*/
 
 	//4) 벽, Obj, 타일 ????
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(680, 400));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CItemBlock>::Create(680, 400));
 
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(850, 400));
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(900, 400));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CItemBlock>::Create(900, 400));
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(950, 400));
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(1000, 400));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CItemBlock>::Create(1000, 400));
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(1050, 400));
 	
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(950,220));
+	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CItemBlock>::Create(950,220));
 
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(1200, 530));
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CPlantBlock>::Create(1600, 510));
@@ -104,11 +105,10 @@ void CMainGame::Initialize()
 	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(5400, 400));
 
 	// 테스트
-	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, CAbstractFactory<CMushroomMon>::Create(300, 300));
+	CObjMgr::Get_Instance()->AddObject(OBJID::MONSTER, CAbstractFactory<CMushroomMon>::Create(850, 400));
 
 	//5) 선 그리기
 	CLineMgr::Get_Instance()->Initialize();
-	CObjMgr::Get_Instance()->AddObject(OBJID::BLOCK, CAbstractFactory<CBreakBlock>::Create(2800,540));
 }
 
 void CMainGame::Update()

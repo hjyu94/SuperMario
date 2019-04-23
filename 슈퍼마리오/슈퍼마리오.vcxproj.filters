@@ -136,6 +136,9 @@
     <ClInclude Include="LineMgr.h">
       <Filter>97. Manager</Filter>
     </ClInclude>
+    <ClInclude Include="ItemBlock.h">
+      <Filter>01. Obj\05.Block</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -206,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="LineMgr.cpp">
       <Filter>97. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBlock.cpp">
+      <Filter>01. Obj\05.Block</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

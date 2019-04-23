@@ -28,12 +28,12 @@ void CBreakBlock::Initialize()
 
 int CBreakBlock::Update()
 {
-	if (!m_bInit)
+	/*if (!m_bInit)
 	{
 		CObj::UpdateRect();
 		CLineMgr::Get_Instance()->AddLine(m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.top);
 		m_bInit = true;
-	}
+	}*/
 	CObj::UpdateRect();
 
 
@@ -92,6 +92,10 @@ void CBreakBlock::Release()
 
 void CBreakBlock::Collision_Proc(CObj * pCounterObj)
 {
+	if (pCounterObj->Get_Rect().left > m_tRect.left
+		&& pCounterObj->Get_Rect().right < m_tRect.right)
+	{
+		this->m_bIsDead = true;
 
 		int Num = (rand() % 15) + 5;
 		{
@@ -110,5 +114,6 @@ void CBreakBlock::Collision_Proc(CObj * pCounterObj)
 				return;
 			}
 		}
+	}
 }
 
